@@ -9,13 +9,31 @@ const Social = () => {
     const handleGoogleLogin=()=>{
         handleGoogle()
         .then(result=>{
-            Swal.fire({
-                icon: 'success',
-                title: 'Log in successfully',
-               
-              })
-            navigate('/')
-        })
+         const data=result?.user
+         const saveUser = { name: data?.displayName
+            , email: data?.email,image:data?.photoURL,role:'user'}
+            console.log(saveUser);
+                        fetch('http://localhost:6500/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveUser)
+                        })
+                        .then(res=>res.json())
+                        .then(data=>{
+                          if (data.insertedId) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Log in successfully',
+                               
+                              })
+                             
+                        }
+                        navigate('/')
+                        })
+                      })
+       
         .catch(error=>{
             console.log(error.message);
         })

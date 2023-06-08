@@ -39,17 +39,41 @@ const Register = () => {
         .then(res=>res.json())
         .then(data=>{
         const img =data.data.display_url
+       
         handleCreateUser(email,password)
         .then(result=>{
             console.log(result.user);
             updateUserProfile(result.user,name,img)
-            navigate('/')
+         
+                        const saveUser = { name,email,image:img,role:'user'}
+                        fetch('http://localhost:6500/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveUser)
+                        })
+                        .then(res=>res.json())
+                        .then(data=>{
+                          if (data.insertedId) {
+                            
+                            Swal.fire({
+                              icon: 'success',
+                              title: 'Register successfully',
+                             
+                            })
+                            navigate('/')
+                        }
+                        })
+                      })
+
+
+           
         })
         .catch(error =>{
             setErr(error.message)
             setSpinner(false)
         } )
-        })
        
     }
 
