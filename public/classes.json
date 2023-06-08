@@ -1,0 +1,98 @@
+[
+    {
+        "classId": 1,
+        "className": "Piano Beginners",
+        "instructorName": "John Smith",
+        "availableSeats": 10,
+        "image": "https://i.ibb.co/kQKv9tk/istockphoto-480652459-612x612.jpg",
+        "price": 50
+      },
+      {
+        "classId": 2,
+        "className": "Guitar Intermediate",
+        "instructorName": "Sarah Johnson",
+        "availableSeats": 8,
+        "image": "https://i.ibb.co/dJyNVGy/mWk7L3g.jpg",
+        "price": 40
+      },
+      {
+        "classId": 3,
+        "className": "Drums Advanced",
+        "instructorName": "Michael Davis",
+        "availableSeats": 12,
+        "image": "https://i.ibb.co/sHndCYP/dram.png",
+        "price": 60
+      },
+      {
+        "classId": 4,
+        "className": "Violin Beginners",
+        "instructorName": "Emily Thompson",
+        "availableSeats": 8,
+        "image": "https://i.ibb.co/0Fjts2y/violin-image-free-7.webp",
+        "price": 55
+      },
+      {
+        "classId": 5,
+        "className": "Saxophone Intermediate",
+        "instructorName": "David Wilson",
+        "availableSeats": 15,
+        "image": "https://i.ibb.co/w4YfrbG/trumpet-saxophone-PNG14720.png",
+        "price": 45
+      },
+      {
+        "classId": 7,
+        "className": "Bass Guitar Beginners",
+        "instructorName": "Robert Martinez",
+        "availableSeats": 5,
+        "image": "https://i.ibb.co/NZJD3hs/fu0mjvziselfw6fp0d5t.jpg",
+        "price": 40
+      },
+      {
+        "classId": 8,
+        "className": "Trumpet Advanced",
+        "instructorName": "Daniel Lee",
+        "availableSeats": 7,
+        "image": "https://i.ibb.co/zZx539k/istockphoto-137129980-170667a.jpg",
+        "price": 65
+      },
+      {
+        "classId": 9,
+        "className": "Flute Beginners",
+        "instructorName": "Sophia Brown",
+        "availableSeats": 10,
+        "image": "https://i.ibb.co/hKScfWd/WFL270copy-900x600c0pcenter.png",
+        "price": 50
+      },
+      {
+        "classId": 10,
+        "className": "Cello Intermediate",
+        "instructorName": "Oliver Turner",
+        "availableSeats": 7,
+        "image": "https://i.ibb.co/PxY2TDn/cello-405758.webp",
+        "price": 60
+      },
+      {
+        "classId": 11,
+        "className": "Keyboard Beginners",
+        "instructorName": "Ava Walker",
+        "availableSeats": 9,
+        "image": "https://i.ibb.co/ftv95CM/istockphoto-1399299335-612x612.jpg",
+        "price": 45
+      },
+      {
+        "classId": 12,
+        "className": "Harmonica Intermediate",
+        "instructorName": "Jackson Evans",
+        "availableSeats": 12,
+        "image": "https://i.ibb.co/SRVsmPT/istockphoto-1082345810-612x612.jpg",
+        "price": 40
+      },
+      {
+        "classId": 13,
+        "className": "Accordion Beginners",
+        "instructorName": "Mia Harris",
+        "availableSeats": 15,
+        "image": "https://i.ibb.co/BgmF2zF/istockphoto-1159006704-612x612.jpg",
+        "price": 55
+      }
+]
