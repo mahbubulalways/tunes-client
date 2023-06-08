@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import { AuthContext } from '../../../Provider/AuthProvider';
-import {  TrashIcon } from '@heroicons/react/24/solid'
+
 import Swal from 'sweetalert2';
 const MyClasses = () => {
     const {users,loading}=useContext(AuthContext)
@@ -69,12 +69,11 @@ const total = selectedClass.reduce((sum, selectedClass) => selectedClass.price +
     return (
         <div className='w-[90%] mx-auto p-8'>
             <h1 className='text-center py-8 text-2xl'>My Selected Classes</h1>
-           <div className='flex my-5'>
-           <div className='border-2 w-max px-5 py-2'>
+         
+           <div className='border-2 w-max px-5 py-2 my-5'>
            <h1>Total Price : ${total}</h1>
           </div>
-          <button className=' bg-red-600 px-8 text-white '>PAY</button>
-           </div>
+          
             <div className="overflow-x-auto">
   <table className="table">
     {/* head */}
@@ -84,6 +83,7 @@ const total = selectedClass.reduce((sum, selectedClass) => selectedClass.price +
         <th>Image</th>
         <th>Name</th>
         <th>Price</th>
+        <th>Payment</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -95,7 +95,9 @@ const total = selectedClass.reduce((sum, selectedClass) => selectedClass.price +
             <td><img className='w-12' src={item.image} alt="" /></td>
             <td>{item.className}</td>
             <td>${item.price}</td>
-            <td><button onClick={()=>handleDelete(item._id)}  className=' bg-red-600 p-2 rounded-md'><TrashIcon className="h-6 w-6 text-white" /></button></td>
+            <td> <button className=' bg-green-600 px-5 py-2 rounded-md text-white '>PAY</button>
+           </td>
+            <td><button onClick={()=>handleDelete(item._id)}  className=' bg-red-600 p-2 rounded-md text-white'>Delete</button></td>
           </tr>)
       }
       

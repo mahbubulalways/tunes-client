@@ -1,39 +1,57 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import useAdmin from '../hooks/useAdmin';
 
 
 const Dashboard = () => {
-  
-  const [isAdmin]=useAdmin()
-  console.log(isAdmin);
-    return ( 
-        <div>
-           <div className="drawer lg:drawer-open">
-  <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-  <div className="drawer-content ">
 
-    <Outlet></Outlet>
-    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
-  
-  </div> 
-  <div className="drawer-side">
-    <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
- 
- {
-  isAdmin ?      <ul className="menu p-8 w-60  h-full border-2 bg-white space-y-4">
-  <Link to='/dashboard/allUsers'><li className='border-b-2 text-lg'>All users</li></Link>
-    <li className=' border-b-2 text-lg'>Sidebar Item 2</li>
-  </ul>:   <ul className="menu p-8 w-60  h-full border-2 bg-white space-y-4">
-  <Link to='/dashboard/my-classes'><li className='border-b-2 text-lg'>My  classes</li></Link>
-    <li className=' border-b-2 text-lg'>Sidebar Item 2</li>
-  </ul>
- }
-  
-  </div>
-</div>
+  const [isAdmin] = useAdmin()
+  console.log(isAdmin);
+  return (
+    <div>
+      <div className="drawer lg:drawer-open">
+        <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+        <div className="drawer-content ">
+
+          <Outlet></Outlet>
+          <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+
         </div>
-    );
+        <div className="drawer-side  bg-[#3e3434]">
+          <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+          <ul className="menu p-8 w-60  h-full   space-y-4">
+          {
+            isAdmin ? <>
+              <Link to='/dashboard/allUsers'><li className='border-b-2 text-white hover:bg-white hover:text-black p-1 rounded'>All users</li></Link>
+              <li className='border-b-2 text-white hover:bg-white hover:text-black p-1 rounded'>Sidebar Item 2</li>
+            </>
+              :
+
+              <>
+
+                <NavLink to='/dashboard/my-classes' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><li className='border-b-2 text- hover:bg-white hover:text-black p-1 rounded'>My  Classes</li></NavLink>
+
+
+                <li className=' border-b-2 text-white hover:bg-white hover:text-black p-1 rounded'>My Enrolled Classes</li>
+                <li className=' border-b-2 text-white hover:bg-white hover:text-black p-1 rounded'> Payment History</li>
+              </>
+          }
+
+                    <div className=" border-b-8 border-gray-600 pt-10">  </div>
+                
+                    <Link to="/"><p className=' border-b-2 mt-4 text-white hover:bg-white hover:text-black p-1 rounded'>Home</p></Link>
+                    <Link to="/instructor"><p className=' border-b-2 text-white hover:bg-white hover:text-black p-1 rounded'>Instructor</p></Link>
+                    <Link to="/classes"><p className=' border-b-2 text-white hover:bg-white hover:text-black p-1 rounded'>Classes</p></Link>
+                    
+                   
+                   </ul>
+                    
+
+        </div>
+
+      </div>
+    </div>
+  );
 };
 
 export default Dashboard;

@@ -10,6 +10,7 @@ import Dashboard from "../Layout/Dashboard";
 import MyClasses from "../Pages/Dashboard/Students/MyClasses";
 import PrivateRoutes from "./PrivateRoutes";
 import AllUsers from "../Pages/Dashboard/Admin/AllUsers";
+import AdminRoute from "./adminRoute";
 
 const router = createBrowserRouter([
     {
@@ -50,7 +51,7 @@ const router = createBrowserRouter([
         },
         {
           path:'allUsers',
-          element: <PrivateRoutes><AllUsers></AllUsers></PrivateRoutes>
+          element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
         },
       ]
   },
