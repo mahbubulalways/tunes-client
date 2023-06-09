@@ -4,8 +4,8 @@ import { useQuery } from '@tanstack/react-query';
 import {  TrashIcon } from '@heroicons/react/24/solid'
 import { FaUserCheck,FaUserTie } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import useAdmin from '../../../hooks/useAdmin';
 const AllUsers = () => {
-  const [admin,setAdmin]=useState(false)
     const [axiosSecure]=useAxiosSecure()
     const { refetch, data: allUser = [] } = useQuery({
         queryKey: ['allUsers'],
@@ -16,6 +16,9 @@ const AllUsers = () => {
         },
     })
    
+
+    
+
 
     const handleMakeAdmin=(id)=>{
      Swal.fire({
@@ -55,7 +58,45 @@ const AllUsers = () => {
 }
 
 
-// const handleMakeInstructor
+const handleMakeInstructor=(id)=>{
+
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "Make this user Instructor",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      const role ='instructor'
+      const updateData={role:role}
+      fetch(`http://localhost:6500/makeInstructor/${id}`,{
+        method:'PATCH',
+        headers:{
+          'content-type':'application/json'
+        },
+        body:JSON.stringify(updateData)
+      })
+      .then(res => res.json())
+            .then(data => {
+              console.log(data);
+                if (data.modifiedCount > 0) {
+                 
+                    refetch();
+                    Swal.fire(
+                        'Done',
+                        'Make admin successfully',
+                        'success'
+                    )
+                }
+                
+            })
+    }
+  })
+
+}
 
 
 
@@ -125,10 +166,10 @@ const handleDeleteUser =(id)=>{
             <td className='text-center'>{user.email}</td>
             <td className='text-center'>{user.role}</td>
             <td className='text-center'>
-            <button onClick={()=>handleMakeAdmin(user._id)} className=' bg-blue-600 p-2 text-white rounded-md' disabled={admin}> <FaUserCheck className='w-6 h-6'/></button>
+            <button onClick={()=>handleMakeAdmin(user._id)} className=' bg-blue-600 p-2 text-white rounded-md disabled:bg-gray-500' disabled={user.role==='admin'}> <FaUserCheck className='w-6 h-6'/></button>
            </td>
            <td className='text-center'>
-           <button onClick={()=>handleMakeInstructor(user._id)} className=' bg-yellow-600 p-2 mt-2 text-white rounded-md'><FaUserTie className='w-6 h-6'/></button>
+           <button onClick={()=>handleMakeInstructor(user._id)} className=' bg-yellow-600 p-2 mt-2 text-white rounded-md disabled:bg-gray-500' disabled={user.role==='instructor'}><FaUserTie className='w-6 h-6'/></button>
            </td>
             <td className='text-center'><button onClick={()=>handleDeleteUser(user._id)} className=' bg-red-600 p-2 text-white rounded-md'>Delete</button></td>
           </tr>)

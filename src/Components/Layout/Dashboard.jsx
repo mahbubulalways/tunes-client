@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import useAdmin from '../hooks/useAdmin';
+import useInstructor from '../hooks/useInstructor';
+import useUser from '../hooks/useUser';
 
 
 const Dashboard = () => {
-  //  const isAdmin=true
   const [isAdmin] = useAdmin()
-  const isInstructor=true
-  const user=false
+  const [isInstructor]=useInstructor()
+  const [isUser]=useUser()
 
-  // console.log(isAdmin);
+
   return (
     <div>
       <div className="drawer lg:drawer-open">
@@ -34,13 +35,14 @@ const Dashboard = () => {
 
           {
             isInstructor && <>
-             <Link to='addClass'><li className=' border-b-2 text-white hover:bg-white hover:text-black p-1 rounded'>Add a Class</li></Link>
+            <NavLink to='/dashboard/addClass' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><li className='border-b-2 text- hover:bg-white hover:text-black p-1 rounded'>Add a Class</li></NavLink>
+           
                 <li className=' border-b-2 text-white hover:bg-white hover:text-black p-1 rounded'> Payment History</li>
             </>
           }
 
           {
-            user && <>
+            isUser && <>
 
             <NavLink to='/dashboard/my-classes' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><li className='border-b-2 text- hover:bg-white hover:text-black p-1 rounded'>My  Classes</li></NavLink>
 

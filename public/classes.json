@@ -6,6 +6,7 @@
         "availableSeats": 10,
         "image": "https://i.ibb.co/kQKv9tk/istockphoto-480652459-612x612.jpg",
         "price": 50,
+        "status": "approve",
          "disable":false
       },
       {
@@ -15,6 +16,7 @@
         "availableSeats": 8,
         "image": "https://i.ibb.co/dJyNVGy/mWk7L3g.jpg",
         "price": 40,
+        "status": "approve",
         "disable":false
       },
       {
@@ -24,6 +26,7 @@
         "availableSeats": 12,
         "image": "https://i.ibb.co/sHndCYP/dram.png",
         "price": 60,
+        "status": "approve",
         "disable":false
       },
       {
@@ -33,6 +36,7 @@
         "availableSeats": 8,
         "image": "https://i.ibb.co/0Fjts2y/violin-image-free-7.webp",
         "price": 55,
+        "status": "approve",
         "disable":false
       },
       {
@@ -42,6 +46,7 @@
         "availableSeats": 15,
         "image": "https://i.ibb.co/w4YfrbG/trumpet-saxophone-PNG14720.png",
         "price": 45,
+        "status": "approve",
         "disable":false
       },
       {
@@ -51,6 +56,7 @@
         "availableSeats": 5,
         "image": "https://i.ibb.co/NZJD3hs/fu0mjvziselfw6fp0d5t.jpg",
         "price": 40,
+        "status": "approve",
         "disable":false
       },
       {
@@ -60,6 +66,7 @@
         "availableSeats": 7,
         "image": "https://i.ibb.co/zZx539k/istockphoto-137129980-170667a.jpg",
         "price": 65,
+        "status": "approve",
         "disable":false
       },
       {
@@ -69,6 +76,7 @@
         "availableSeats": 10,
         "image": "https://i.ibb.co/hKScfWd/WFL270copy-900x600c0pcenter.png",
         "price": 50,
+        "status": "approve",
         "disable":false
       },
       {
@@ -78,6 +86,7 @@
         "availableSeats": 7,
         "image": "https://i.ibb.co/PxY2TDn/cello-405758.webp",
         "price": 60,
+        "status": "approve",
         "disable":false
       },
       {
@@ -87,6 +96,7 @@
         "availableSeats": 9,
         "image": "https://i.ibb.co/ftv95CM/istockphoto-1399299335-612x612.jpg",
         "price": 45,
+        "status": "approve",
         "disable":false
       },
       {
@@ -96,6 +106,7 @@
         "availableSeats": 12,
         "image": "https://i.ibb.co/SRVsmPT/istockphoto-1082345810-612x612.jpg",
         "price": 40,
+        "status": "approve",
         "disable":false
       },
       {
@@ -105,6 +116,7 @@
         "availableSeats": 15,
         "image": "https://i.ibb.co/BgmF2zF/istockphoto-1159006704-612x612.jpg",
         "price": 55,
+        "status": "approve",
         "disable":false
       }
 ]

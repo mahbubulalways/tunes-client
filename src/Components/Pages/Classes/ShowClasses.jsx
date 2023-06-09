@@ -87,7 +87,7 @@ const ShowClasses = ({data}) => {
         <div className=''>
           
             <div  className={`card card-compact   bg-base-100 shadow-xl ${disable && 'bg-red-400'}`}>
-                <figure className='bg-white'><img className='h-56' src={image} alt="Shoes" /></figure>
+                <figure className='bg-white'><img className='h-56' src={image}  /></figure>
                 <div className="card-body">
                   <h2 className="card-title">{className}</h2>
                   <p>Instructor : {instructorName}</p>
