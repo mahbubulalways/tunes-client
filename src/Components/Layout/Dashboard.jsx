@@ -6,7 +6,10 @@ import useAdmin from '../hooks/useAdmin';
 const Dashboard = () => {
   //  const isAdmin=true
   const [isAdmin] = useAdmin()
-  console.log(isAdmin);
+  const isInstructor=true
+  const user=false
+
+  // console.log(isAdmin);
   return (
     <div>
       <div className="drawer lg:drawer-open">
@@ -21,21 +24,37 @@ const Dashboard = () => {
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-8 w-60  h-full   space-y-4">
           {
-            isAdmin ? <>
+            isAdmin && <>
               <Link to='/dashboard/allUsers'><li className='border-b-2 text-white hover:bg-white hover:text-black p-1 rounded'>All users</li></Link>
               <li className='border-b-2 text-white hover:bg-white hover:text-black p-1 rounded'>Sidebar Item 2</li>
             </>
-              :
-
-              <>
-
-                <NavLink to='/dashboard/my-classes' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><li className='border-b-2 text- hover:bg-white hover:text-black p-1 rounded'>My  Classes</li></NavLink>
-
-
-                <li className=' border-b-2 text-white hover:bg-white hover:text-black p-1 rounded'>My Enrolled Classes</li>
-                <li className=' border-b-2 text-white hover:bg-white hover:text-black p-1 rounded'> Payment History</li>
-              </>
+              
           }
+          
+
+          {
+            isInstructor && <>
+             <Link to='addClass'><li className=' border-b-2 text-white hover:bg-white hover:text-black p-1 rounded'>Add a Class</li></Link>
+                <li className=' border-b-2 text-white hover:bg-white hover:text-black p-1 rounded'> Payment History</li>
+            </>
+          }
+
+          {
+            user && <>
+
+            <NavLink to='/dashboard/my-classes' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><li className='border-b-2 text- hover:bg-white hover:text-black p-1 rounded'>My  Classes</li></NavLink>
+
+
+            <li className=' border-b-2 text-white hover:bg-white hover:text-black p-1 rounded'>My Enrolled Classes</li>
+            <li className=' border-b-2 text-white hover:bg-white hover:text-black p-1 rounded'> Payment History</li>
+          </>
+          }
+
+
+
+
+
+
 
                     <div className=" border-b-8 border-gray-600 pt-10">  </div>
                 
