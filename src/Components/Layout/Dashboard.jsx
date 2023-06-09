@@ -36,8 +36,9 @@ const Dashboard = () => {
           {
             isInstructor && <>
             <NavLink to='/dashboard/addClass' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><li className='border-b-2 text- hover:bg-white hover:text-black p-1 rounded'>Add a Class</li></NavLink>
+            <NavLink to='/dashboard/instructorClass' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><li className='border-b-2 text- hover:bg-white hover:text-black p-1 rounded'>My Class</li></NavLink>
            
-                <li className=' border-b-2 text-white hover:bg-white hover:text-black p-1 rounded'> Payment History</li>
+                
             </>
           }
 

@@ -4,10 +4,12 @@ import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import useClasses from '../../hooks/useClasses';
 import useAdmin from '../../hooks/useAdmin';
+import useInstructor from '../../hooks/useInstructor';
 
 
 const ShowClasses = ({data}) => {
   const [isAdmin]=useAdmin()
+  const [isInstructor]=useInstructor()
     const {_id,image,className,instructorName,price,availableSeats,disable}=data
     const {users}=useContext(AuthContext)
     const [,refetch]=useClasses()
@@ -56,6 +58,7 @@ const ShowClasses = ({data}) => {
               return
                 }
                 const remaining=item.availableSeats-1
+                c
                 const updatedSeat={remaining}
                 fetch(`http://localhost:6500/update/${item._id}`,{
                   method:'PUT',
@@ -94,7 +97,7 @@ const ShowClasses = ({data}) => {
                   <p>Available seats : {availableSeats}</p>
                   <p>Price : ${price}</p>
                   <div className="card-actions justify-end">
-                    <button onClick={()=>selectClass(data)} className=" bg-blue-700 text-gray-100 w-full py-3 rounded-lg hover:bg-[#000000] transition-all duration-300 disabled:bg-gray-500" disabled={disable || isAdmin}>Select</button>
+                    <button onClick={()=>selectClass(data)} className=" bg-blue-700 text-gray-100 w-full py-3 rounded-lg hover:bg-[#000000] transition-all duration-300 disabled:bg-gray-500" disabled={disable || isAdmin || isInstructor}>Select</button>
                   </div>
                 </div>
               </div>
