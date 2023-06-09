@@ -4,9 +4,11 @@ import { AuthContext } from '../../../Provider/AuthProvider';
 import { XMarkIcon, Bars3Icon } from '@heroicons/react/24/solid'
 import userImg from '../../../../assets/user.png'
 import logo from '../../../../assets/logo.png'
+import { darkMode, lightMode } from '../../ToggleTheme/Theme';
 const Navbar = () => {
     const { users, handleLogOut } = useContext(AuthContext)
     const [toggle, setToggle] = useState(false)
+    const [theme,setTheme]=useState(true)
     console.log(users);
 
     const handleLogOutUser = () => {
@@ -14,6 +16,17 @@ const Navbar = () => {
         localStorage.removeItem('token')
 
     }
+
+    const handleDark=()=>{
+        darkMode()
+        setTheme(!theme)
+    }
+    const handleLight=()=>{
+        lightMode()
+        setTheme(!theme)
+    }
+
+
     return (
         <div className='border-b-2 bg-white sticky top-0 z-10'>
             <div className='w-[80%] mx-auto flex items-center justify-between gap-10 py-2'>
@@ -77,9 +90,15 @@ const Navbar = () => {
       {
         users ? <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
        <Link to='/dashboard'> <li><a>Dashboard</a></li></Link>
+       {
+          theme ? <li onClick={handleDark}><a>Dark mode</a></li>: <li onClick={handleLight}><a>Light Mode</a></li>
+       }
         <li onClick={handleLogOutUser}><a>Logout</a></li>
       </ul>:<ul tabIndex={0} className="mt-3 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
        <Link to='login'> <li><a>Log in</a></li></Link>
+       {
+          theme ? <li onClick={handleDark}><a>Dark mode</a></li>: <li onClick={handleLight}><a>Light Mode</a></li>
+       }
       </ul>
       }
     </div>

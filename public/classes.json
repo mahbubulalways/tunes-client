@@ -5,7 +5,8 @@
         "instructorName": "John Smith",
         "availableSeats": 10,
         "image": "https://i.ibb.co/kQKv9tk/istockphoto-480652459-612x612.jpg",
-        "price": 50
+        "price": 50,
+         "disable":false
       },
       {
         "classId": 2,
@@ -13,7 +14,8 @@
         "instructorName": "Sarah Johnson",
         "availableSeats": 8,
         "image": "https://i.ibb.co/dJyNVGy/mWk7L3g.jpg",
-        "price": 40
+        "price": 40,
+        "disable":false
       },
       {
         "classId": 3,
@@ -21,7 +23,8 @@
         "instructorName": "Michael Davis",
         "availableSeats": 12,
         "image": "https://i.ibb.co/sHndCYP/dram.png",
-        "price": 60
+        "price": 60,
+        "disable":false
       },
       {
         "classId": 4,
@@ -29,7 +32,8 @@
         "instructorName": "Emily Thompson",
         "availableSeats": 8,
         "image": "https://i.ibb.co/0Fjts2y/violin-image-free-7.webp",
-        "price": 55
+        "price": 55,
+        "disable":false
       },
       {
         "classId": 5,
@@ -37,7 +41,8 @@
         "instructorName": "David Wilson",
         "availableSeats": 15,
         "image": "https://i.ibb.co/w4YfrbG/trumpet-saxophone-PNG14720.png",
-        "price": 45
+        "price": 45,
+        "disable":false
       },
       {
         "classId": 7,
@@ -45,7 +50,8 @@
         "instructorName": "Robert Martinez",
         "availableSeats": 5,
         "image": "https://i.ibb.co/NZJD3hs/fu0mjvziselfw6fp0d5t.jpg",
-        "price": 40
+        "price": 40,
+        "disable":false
       },
       {
         "classId": 8,
@@ -53,7 +59,8 @@
         "instructorName": "Daniel Lee",
         "availableSeats": 7,
         "image": "https://i.ibb.co/zZx539k/istockphoto-137129980-170667a.jpg",
-        "price": 65
+        "price": 65,
+        "disable":false
       },
       {
         "classId": 9,
@@ -61,7 +68,8 @@
         "instructorName": "Sophia Brown",
         "availableSeats": 10,
         "image": "https://i.ibb.co/hKScfWd/WFL270copy-900x600c0pcenter.png",
-        "price": 50
+        "price": 50,
+        "disable":false
       },
       {
         "classId": 10,
@@ -69,7 +77,8 @@
         "instructorName": "Oliver Turner",
         "availableSeats": 7,
         "image": "https://i.ibb.co/PxY2TDn/cello-405758.webp",
-        "price": 60
+        "price": 60,
+        "disable":false
       },
       {
         "classId": 11,
@@ -77,7 +86,8 @@
         "instructorName": "Ava Walker",
         "availableSeats": 9,
         "image": "https://i.ibb.co/ftv95CM/istockphoto-1399299335-612x612.jpg",
-        "price": 45
+        "price": 45,
+        "disable":false
       },
       {
         "classId": 12,
@@ -85,7 +95,8 @@
         "instructorName": "Jackson Evans",
         "availableSeats": 12,
         "image": "https://i.ibb.co/SRVsmPT/istockphoto-1082345810-612x612.jpg",
-        "price": 40
+        "price": 40,
+        "disable":false
       },
       {
         "classId": 13,
@@ -93,6 +104,7 @@
         "instructorName": "Mia Harris",
         "availableSeats": 15,
         "image": "https://i.ibb.co/BgmF2zF/istockphoto-1159006704-612x612.jpg",
-        "price": 55
+        "price": 55,
+        "disable":false
       }
 ]

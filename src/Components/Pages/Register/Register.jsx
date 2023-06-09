@@ -45,7 +45,7 @@ const Register = () => {
             console.log(result.user);
             updateUserProfile(result.user,name,img)
          
-                        const saveUser = { name,email,image:img,role:'user'}
+                        const saveUser = { name,email,image:img,role:'user',admin:false,instructor:false}
                         fetch('http://localhost:6500/users', {
                             method: 'POST',
                             headers: {
@@ -72,6 +72,7 @@ const Register = () => {
         })
         .catch(error =>{
             setErr(error.message)
+            console.log(error.message);
             setSpinner(false)
         } )
        
