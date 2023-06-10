@@ -1,10 +1,28 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../../hooks/useAxiosSecure';
+import { AuthContext } from '../../../Provider/AuthProvider';
 
-const CheckOutForm = () => {
+const CheckOutForm = ({price}) => {
     const stripe=useStripe()
     const elements=useElements()
+    const [axiosSecure]=useAxiosSecure()
+    const [clientSecret,setClientSecret]=useState('')
+    const {users}=useContext(AuthContext)
+   
+   console.log(price);
+    useEffect(()=>{
+        axiosSecure.post('/create-payment-intent',{price},
+        )
+        .then(res=>{
+            console.log(res.data.clientSecret);
+            setClientSecret(res.data.clientSecret);
+        })
+    },[price])
+
+
+
     const handleSubmit=async(event)=>{
         event.preventDefault()
         if(!stripe || !elements){
@@ -33,6 +51,35 @@ const CheckOutForm = () => {
         else{
             console.log('payment',paymentMethod);
         }
+
+        const {paymentIntent, error:confirmError} = await stripe.confirmCardPayment(
+            clientSecret,
+            {
+              payment_method: {
+                card: card,
+                billing_details: {
+                  email: users?.email || 'Unknown',
+                  name: users?.displayName  || 'Unknown',
+                },
+              },
+            },
+          );
+     
+          if(confirmError){
+            console.log(confirmError);
+            const cardError=confirmError.message
+            // Swal.fire({
+            //     icon: 'warning',
+            //     title: 'Warning',
+            //     text:cardError
+               
+            //   })
+          }
+
+          else{
+            console.log(paymentIntent);
+          }
+
     }
     
 
@@ -55,7 +102,7 @@ const CheckOutForm = () => {
           },
         }}
       />
-      <button className='bg-blue-600 duration-300 hover:bg-[#000000] text-white px-8 py-1 rounded mt-4' type="submit" disabled={!stripe}>
+      <button className='bg-blue-600 duration-300 hover:bg-[#000000] text-white px-8 py-1 rounded mt-4 disabled:bg-gray-500' type="submit" disabled={!stripe || !clientSecret}>
         Pay
       </button>
     </form> 

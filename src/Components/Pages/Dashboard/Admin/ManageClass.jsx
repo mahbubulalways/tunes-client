@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import { XMarkIcon, CheckIcon } from '@heroicons/react/24/solid'
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 const ManageClass = () => {
     const [axiosSecure]=useAxiosSecure()
     const { refetch, data: allClasses = [] } = useQuery({
@@ -37,8 +38,8 @@ const handleApprove=(id)=>{
             })
             .then(res=>res.json())
             .then(data=>{
-               
-              if (data.modifiedCount) {
+              
+              if (data.modifiedCount>0) {
                 refetch()
                 Swal.fire({
                   icon: 'success',
@@ -76,7 +77,7 @@ const handleDeny=(id)=>{
             .then(res=>res.json())
             .then(data=>{
                
-              if (data.modifiedCount) {
+              if (data.modifiedCount>0) {
                 refetch()
                 Swal.fire({
                   icon: 'success',
@@ -89,8 +90,6 @@ const handleDeny=(id)=>{
         }
       })
 }
-
-
 
 
 
@@ -133,7 +132,7 @@ const handleDeny=(id)=>{
             <td className='text-center'>{eachClass.availableSeats
 }</td>
             <td className='text-center'>${eachClass.price}</td>
-            <td className='text-center'><button className=' bg-blue-600 text-white px-2 py-1 w-max mx-auto rounded-md'>Send Feedback</button></td>
+           <Link to={`feedback/${eachClass._id}`}> <td className='text-center'><button className=' bg-blue-600 text-white px-2 py-1 w-max mx-auto rounded-md'>Send Feedback</button></td></Link>
             <td>{
                 eachClass.status==='approve' ? <p>Approved</p> : eachClass.status==='deny' ? <p>Deny</p>  : <div className='flex gap-2'>
                     <button onClick={()=>handleApprove(eachClass._id)}  className=' bg-green-600 text-white px-2 py-2 w- mx-auto rounded-md w'><CheckIcon className="h-6 w-6" /></button>
@@ -151,6 +150,7 @@ const handleDeny=(id)=>{
   </table>
 </div>
         </div>
+
         </div>
     );
 };

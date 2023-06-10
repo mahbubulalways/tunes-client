@@ -42,7 +42,7 @@ console.log(instructorClass);
             <td><img className='w-12 h-12 rounded-full' src={eachClass.image} alt="" /></td>
             <td className='text-center'>{eachClass.className}</td>
             <td className='text-center'>{eachClass.enroll}</td>
-            <td className='text-center'><button className=' bg-blue-600 text-white px-4 py-2 w-max mx-auto rounded-md'>Feedback</button></td>
+            <td className='text-center'>{eachClass.feedback}</td>
             <td className='text-center'><p className={`  text-white px-4 py-2 w-max mx-auto rounded-md ${eachClass.status==='approve' ? 'bg-green-600' : eachClass.status==='deny'? 'bg-red-600' :'bg-yellow-600' }`}>{eachClass.status}</p></td>
             
             

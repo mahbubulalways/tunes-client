@@ -24,7 +24,7 @@ const AddClass = () => {
         .then(res=>res.json())
         .then(data=>{
         const img =data.data.display_url
-        const newClass = { className:name,email:users.email,image:img,instructorName:users.displayName,status,price,availableSeats:seats,disable,enroll:0}
+        const newClass = { className:name,email:users.email,image:img,instructorName:users.displayName,status,price,availableSeats:seats,disable,enroll:0,feedback:'No feedback'}
         fetch('http://localhost:6500/classes', {
                             method: 'POST',
                             headers: {
