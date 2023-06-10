@@ -140,6 +140,7 @@ const handleDeleteUser =(id)=>{
 
     return (
         <div className='w-[90%] mx-auto p-8'>
+              <h1 className='text-center text-4xl font-serif py-8'>Manage Users</h1>
             <div className=" overflow-scroll w-full">
   <table className="table ">
     {/* head */}

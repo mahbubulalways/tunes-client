@@ -63,20 +63,8 @@ const ShowClasses = ({data}) => {
               })
               return
                 }
-                const remaining=item.availableSeats-1
-                c
-                const updatedSeat={remaining}
-                fetch(`http://localhost:6500/update/${item._id}`,{
-                  method:'PUT',
-                  headers:{
-                    'content-type':'application/json'
-                },
-                body:JSON.stringify(updatedSeat)
-                })
-                .then(res=>res.json())
-                .then(data=>{
-                  refetch()
-                  console.log(data)})
+               
+             
 
               })
         }

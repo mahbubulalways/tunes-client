@@ -102,6 +102,7 @@ const handleDeny=(id)=>{
     return (
         <div>
              <div className='w-[90%] mx-auto p-8'>
+             <h1 className='text-center text-4xl font-serif py-8'>Manage Classes</h1>
             <div className="overflow-x-auto overflow-scroll">
   <table className="table">
     {/* head */}

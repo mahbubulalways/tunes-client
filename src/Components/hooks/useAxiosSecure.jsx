@@ -1,8 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
-import Swal from "sweetalert2";
+
 
 const axiosSecure=axios.create({
     baseURL:`http://localhost:6500`,

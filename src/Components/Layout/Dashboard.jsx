@@ -51,9 +51,13 @@ const Dashboard = () => {
 
             <NavLink to='/dashboard/my-classes' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><li className='border-b-2 text- hover:bg-white hover:text-black p-1 rounded'>My  Classes</li></NavLink>
 
+            <NavLink to='/dashboard/enrollClass' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><li className='border-b-2 text- hover:bg-white hover:text-black p-1 rounded'>My Enrolled Classes</li></NavLink>
 
-            <li className=' border-b-2 text-white hover:bg-white hover:text-black p-1 rounded'>My Enrolled Classes</li>
-            <li className=' border-b-2 text-white hover:bg-white hover:text-black p-1 rounded'> Payment History</li>
+            
+            <NavLink to='/dashboard/paymentHistory' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><li className='border-b-2 text- hover:bg-white hover:text-black p-1 rounded'>Payment History</li></NavLink>
+
+
+            
           </>
           }
 

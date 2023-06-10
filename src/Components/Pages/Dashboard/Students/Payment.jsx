@@ -17,17 +17,17 @@ const Payment = () => {
          queryKey: ['singleClass', userId.id],
          enabled: !loading ,
          queryFn: async () => {
-             const res = await axiosSecure(`/singleClass/${userId.id}`)
+             const res = await axiosSecure(`/singleClass/${userId?.id}`)
              return res?.data;
          },
      })
-console.log(singleClass?.price);
+
     return (
         <div className='w-[80%] mx-auto py-20'>
                <h1>Payment</h1>
                <Elements stripe={stripePromise}>
 
-            <CheckOutForm price={singleClass?.price}></CheckOutForm>
+            <CheckOutForm singleClass={singleClass}></CheckOutForm>
                </Elements>
         </div>
     );

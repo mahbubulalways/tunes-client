@@ -67,42 +67,44 @@ const total = selectedClass.reduce((sum, selectedClass) => selectedClass.price +
 
     return (
         <div className='w-[90%] mx-auto p-8'>
-            <h1 className='text-center py-8 text-2xl'>My Selected Classes</h1>
+            <h1 className='text-center py-8 text-2xl font-serif'>My Selected Classes</h1>
          
-           <div className='border-2 w-max px-5 py-2 my-5'>
-           <h1>Total Price : ${total}</h1>
-          </div>
-          
-            <div className="overflow-x-auto">
-  <table className="table">
-    {/* head */}
-    <thead>
-      <tr>
-        <th></th>
-        <th>Image</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Payment</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      
-      {
-        selectedClass.map((myClass,index)=><tr key={myClass._id}>
-            <th>{index+1}</th>
-            <td><img className='w-12' src={myClass.image} alt="" /></td>
-            <td>{myClass.className}</td>
-            <td>${myClass.price}</td>
-            <td> <Link to={`payment/${myClass._id}`}><button  className=' bg-green-600 px-5 py-2 rounded-md text-white '>PAY</button></Link>
-           </td>
-            <td><button onClick={()=>handleDelete(myClass._id)}  className=' bg-red-600 p-2 rounded-md text-white'>Delete</button></td>
-          </tr>)
-      }
-      
-    </tbody>
-  </table>
-</div>
+          {
+            selectedClass.length > 0   ? <> <div className='border-2 w-max px-5 py-2 my-5'>
+            <h1>Total Price : ${total}</h1>
+           </div>
+           
+             <div className="overflow-x-auto">
+   <table className="table">
+     
+     <thead>
+       <tr>
+         <th></th>
+         <th>Image</th>
+         <th>Name</th>
+         <th>Price</th>
+         <th>Payment</th>
+         <th>Action</th>
+       </tr>
+     </thead>
+     <tbody>
+       
+       {
+         selectedClass.map((myClass,index)=><tr key={myClass._id}>
+             <th>{index+1}</th>
+             <td><img className='w-12' src={myClass.image} alt="" /></td>
+             <td>{myClass.className}</td>
+             <td>${myClass.price}</td>
+             <td> <Link to={`payment/${myClass._id}`}><button  className=' bg-green-600 px-5 py-2 rounded-md text-white '>PAY</button></Link>
+            </td>
+             <td><button onClick={()=>handleDelete(myClass._id)}  className=' bg-red-600 p-2 rounded-md text-white'>Delete</button></td>
+           </tr>)
+       }
+       
+     </tbody>
+   </table>
+ </div> </>: <h1 className='text-center py-20  text-red-600'> No Class Selected</h1>
+          }
         </div>
     );
 };
