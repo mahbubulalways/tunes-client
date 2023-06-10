@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import { AuthContext } from '../../../Provider/AuthProvider';
-
+import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 const MyClasses = () => {
     const {users,loading}=useContext(AuthContext)
@@ -17,7 +17,6 @@ const MyClasses = () => {
     })
 
 const total = selectedClass.reduce((sum, selectedClass) => selectedClass.price + sum, 0);
-
 
 
 
@@ -95,7 +94,7 @@ const total = selectedClass.reduce((sum, selectedClass) => selectedClass.price +
             <td><img className='w-12' src={myClass.image} alt="" /></td>
             <td>{myClass.className}</td>
             <td>${myClass.price}</td>
-            <td> <Link to={`/payment/${myClass._id}`}><button  className=' bg-green-600 px-5 py-2 rounded-md text-white '>PAY</button></Link>
+            <td> <Link to={`payment/${myClass._id}`}><button  className=' bg-green-600 px-5 py-2 rounded-md text-white '>PAY</button></Link>
            </td>
             <td><button onClick={()=>handleDelete(myClass._id)}  className=' bg-red-600 p-2 rounded-md text-white'>Delete</button></td>
           </tr>)
