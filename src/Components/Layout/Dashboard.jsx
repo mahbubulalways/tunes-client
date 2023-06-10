@@ -3,7 +3,7 @@ import { Link, NavLink, Outlet } from 'react-router-dom';
 import useAdmin from '../hooks/useAdmin';
 import useInstructor from '../hooks/useInstructor';
 import useUser from '../hooks/useUser';
-
+import { Fade } from "react-awesome-reveal";
 
 const Dashboard = () => {
   const [isAdmin] = useAdmin()
@@ -18,6 +18,7 @@ const Dashboard = () => {
         <div className="drawer-content ">
 
           <Outlet></Outlet>
+          
           <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
         </div>
@@ -26,7 +27,10 @@ const Dashboard = () => {
           <ul className="menu p-8 w-60  h-full   space-y-4">
           {
             isAdmin && <>
-              <Link to='/dashboard/allUsers'><li className='border-b-2 text-white hover:bg-white hover:text-black p-1 rounded'>All users</li></Link>
+            <NavLink to='/dashboard/allUsers' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><li className='border-b-2 text- hover:bg-white hover:text-black p-1 rounded'>All users</li></NavLink>
+            <NavLink to='/dashboard/manageClass' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><li className='border-b-2 text- hover:bg-white hover:text-black p-1 rounded'>Manage Classes</li></NavLink>
+
+             
               <li className='border-b-2 text-white hover:bg-white hover:text-black p-1 rounded'>Sidebar Item 2</li>
             </>
               

@@ -8,8 +8,9 @@ const AddClass = () => {
     const { register, handleSubmit,formState: { errors } } = useForm();
     const onSubmit = data => {
         const name=data.name
-        const seats=data.seats
-        const price=data.price
+        const seats=parseFloat(data.seats)
+        const price=parseFloat(data.price)
+        const disable=false
         const image=data.image[0]
         const status ='pending'
         const formData = new FormData()
@@ -23,7 +24,7 @@ const AddClass = () => {
         .then(res=>res.json())
         .then(data=>{
         const img =data.data.display_url
-        const newClass = { name,email:users.email,image:img,InstructorName:users.displayName,status,price,seats,enroll:0}
+        const newClass = { className:name,email:users.email,image:img,instructorName:users.displayName,status,price,availableSeats:seats,disable,enroll:0}
         fetch('http://localhost:6500/classes', {
                             method: 'POST',
                             headers: {
@@ -78,7 +79,7 @@ const AddClass = () => {
         />
       <input
           className="w-full px-8 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-600 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
-          type="text" 
+          type="number" 
           placeholder='Available seats'
           {...register("seats", { required: true})}
         />

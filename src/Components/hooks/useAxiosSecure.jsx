@@ -26,14 +26,9 @@ const navigate=useNavigate()
                 navigate('/')
                 const errMessage=error.message
                 console.log(errMessage);
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text:errMessage
-                   
-                  })
+                
                 }
-                console.log(error.message);
+                
                 return Promise.reject(error)
             }
         )

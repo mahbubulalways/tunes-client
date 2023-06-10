@@ -4,7 +4,6 @@ import { useQuery } from '@tanstack/react-query';
 import {  TrashIcon } from '@heroicons/react/24/solid'
 import { FaUserCheck,FaUserTie } from 'react-icons/fa';
 import Swal from 'sweetalert2';
-import useAdmin from '../../../hooks/useAdmin';
 const AllUsers = () => {
     const [axiosSecure]=useAxiosSecure()
     const { refetch, data: allUser = [] } = useQuery({
@@ -43,7 +42,7 @@ const AllUsers = () => {
           .then(res => res.json())
                 .then(data => {
                     if (data.modifiedCount > 0) {
-                      setAdmin(true)
+                     
                         refetch();
                         Swal.fire(
                             'Done',
@@ -141,8 +140,8 @@ const handleDeleteUser =(id)=>{
 
     return (
         <div className='w-[90%] mx-auto p-8'>
-            <div className="overflow-x-auto">
-  <table className="table">
+            <div className=" overflow-scroll w-full">
+  <table className="table ">
     {/* head */}
     <thead>
       <tr>

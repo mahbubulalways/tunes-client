@@ -3,19 +3,25 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import useClasses from '../../hooks/useClasses';
-import useAdmin from '../../hooks/useAdmin';
 import useInstructor from '../../hooks/useInstructor';
+import useAdmin from '../../hooks/useAdmin';
 
 
 const ShowClasses = ({data}) => {
-  const [isAdmin]=useAdmin()
-  const [isInstructor]=useInstructor()
-    const {_id,image,className,instructorName,price,availableSeats,disable}=data
+ const {_id,image,className,instructorName,price,availableSeats,disable}=data
+ 
     const {users}=useContext(AuthContext)
     const [,refetch]=useClasses()
     const navigate =useNavigate()
-    console.log(disable);
+   
+    const [isAdmin]=useAdmin()
+    const [isInstructor]=useInstructor()
+ 
     
+    
+  
+   
+   
 
 
     const selectClass=(item)=>{
@@ -97,7 +103,8 @@ const ShowClasses = ({data}) => {
                   <p>Available seats : {availableSeats}</p>
                   <p>Price : ${price}</p>
                   <div className="card-actions justify-end">
-                    <button onClick={()=>selectClass(data)} className=" bg-blue-700 text-gray-100 w-full py-3 rounded-lg hover:bg-[#000000] transition-all duration-300 disabled:bg-gray-500" disabled={disable || isAdmin || isInstructor}>Select</button>
+                    <button onClick={()=>selectClass(data)} className=" bg-blue-700 text-gray-100 w-full py-3 rounded-lg hover:bg-[#000000] transition-all duration-300 disabled:bg-gray-500" disabled={ isAdmin 
+                    || isInstructor }>Select</button>
                   </div>
                 </div>
               </div>
