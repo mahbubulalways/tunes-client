@@ -14,6 +14,7 @@ const CheckOutForm = ({singleClass}) => {
     const [processing,setProcessing]=useState(false)
     const price =singleClass?.price
     const [classes]=useClasses()
+  
 
     const findClass=classes?.find(oneClass=>oneClass.className===singleClass?.className)
     console.log(findClass);
@@ -96,6 +97,7 @@ const CheckOutForm = ({singleClass}) => {
                
               })
              
+             
               const payment={email:users?.email,
                 transactionID:id,price,
                 image:singleClass?.image,
@@ -117,9 +119,7 @@ const CheckOutForm = ({singleClass}) => {
                          console.log(data);
                       })
                     
-                      // if(findClass){
-                      //   return
-                      // }
+                   
                       const enroll = findClass?.enroll+1
                       const remainingSeat=findClass?.availableSeats-1
                       const updateData={enroll,remainingSeat}

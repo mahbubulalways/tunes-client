@@ -47,7 +47,7 @@ const Feedback = () => {
         <div className='w-[80%] mx-auto py-10'>
             <h1 className='text-center text-4xl font-serif '> Send Feedback</h1>
             <form onSubmit={handleFeedback}>
-                <textarea name="feedback" id="" cols="30" rows="10" className='w-full px-8 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-600 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5' required></textarea>
+                <textarea name="feedback" id="" cols="30" rows="10" className='w-full px-8 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-600 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5' placeholder='Write here' required></textarea>
                 <button
                 
           type="submit"
