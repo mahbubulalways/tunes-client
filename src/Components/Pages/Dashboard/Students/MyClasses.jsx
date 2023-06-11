@@ -20,15 +20,6 @@ const total = selectedClass.reduce((sum, selectedClass) => selectedClass.price +
 
 
 
-
-    // useEffect(() => {
-    //     axiosSecure.get(`/myClass?email=${users?.email}`)
-    //     .then((data) => {
-    //       console.log(data?.data);
-    //       setData(data?.data);
-    //     });
-    //   }, [ axiosSecure]);
-    // console.log(data);
  
 
     const handleDelete=(id)=>{
@@ -42,7 +33,7 @@ const total = selectedClass.reduce((sum, selectedClass) => selectedClass.price +
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-              fetch(`http://localhost:6500/myClass/${id}`,{
+              fetch(`https://assignment-12-server-mahbubulalways.vercel.app/myClass/${id}`,{
                 method:'DELETE'
               })
               .then(res => res.json())

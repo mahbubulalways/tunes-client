@@ -100,7 +100,7 @@ const CheckOutForm = ({singleClass}) => {
 
               if(findClass.availableSeats===1){
                 const btnDisable=true
-                fetch(`http://localhost:6500/setDisable/${findClass._id}`,{
+                fetch(`https://assignment-12-server-mahbubulalways.vercel.app/setDisable/${findClass._id}`,{
                 method:'PATCH',
                 headers:{
                   'content-type':'application/json'
@@ -131,7 +131,7 @@ const CheckOutForm = ({singleClass}) => {
                     
                 })
 
-                fetch(`http://localhost:6500/myClass/${singleClass._id}`,{
+                fetch(`https://assignment-12-server-mahbubulalways.vercel.app/myClass/${singleClass._id}`,{
                   method:'DELETE'
                 })
                 .then(res => res.json())
@@ -144,7 +144,7 @@ const CheckOutForm = ({singleClass}) => {
                       const remainingSeat=findClass?.availableSeats-1
                       const updateData={enroll,remainingSeat}
                       
-                      fetch(`http://localhost:6500/update/${findClass?.className}`,{
+                      fetch(`https://assignment-12-server-mahbubulalways.vercel.app/update/${findClass?.className}`,{
                         method:'PUT',
                         headers:{
                           'content-type':'application/json'

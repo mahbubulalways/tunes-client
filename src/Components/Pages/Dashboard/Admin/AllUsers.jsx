@@ -32,7 +32,7 @@ const AllUsers = () => {
         if (result.isConfirmed) {
           const role ='admin'
           const updateData={role:role}
-          fetch(`http://localhost:6500/makeAdmin/${id}`,{
+          fetch(`https://assignment-12-server-mahbubulalways.vercel.app/makeAdmin/${id}`,{
             method:'PATCH',
             headers:{
               'content-type':'application/json'
@@ -71,7 +71,7 @@ const handleMakeInstructor=(user)=>{
     if (result.isConfirmed) {
       const role ='instructor'
       const updateData={role:role}
-      fetch(`http://localhost:6500/makeInstructor/${user?._id}`,{
+      fetch(`https://assignment-12-server-mahbubulalways.vercel.app/makeInstructor/${user?._id}`,{
         method:'PATCH',
         headers:{
           'content-type':'application/json'
@@ -131,7 +131,7 @@ const handleDeleteUser =(id)=>{
     confirmButtonText: 'Yes, delete it!'
   }).then((result) => {
     if (result.isConfirmed) {
-      fetch(`http://localhost:6500/user/${id}`,{
+      fetch(`https://assignment-12-server-mahbubulalways.vercel.app/user/${id}`,{
         method:'DELETE'
       })
       .then(res => res.json())

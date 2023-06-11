@@ -13,15 +13,7 @@ const EnrollClass = () => {
             return res?.data;
         },
     })
-console.log(enrollClass);
 
-//  useEffect(()=>{
-//    fetch(`http://localhost:6500/enrollClass`)
-//    .then(res=>res.json())
-//    .then(data=>{
-//     console.log(data);
-//    })
-//  },[])
 
     return (
         <div className='w-[90%] mx-auto p-8'>

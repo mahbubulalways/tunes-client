@@ -3,7 +3,7 @@ import usePopular from '../../../hooks/usePopular';
 
 const PopularClass = () => {
     const[popular]=usePopular()
-    console.log(popular);
+  
     return (
        
         <div className='w-[80%] mx-auto mt-20'>
