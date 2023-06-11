@@ -11,7 +11,7 @@ const useUser = () => {
     
     const { data: isUser,refetch,isLoading } = useQuery({
         queryKey: ['user', users?.email],
-        enabled: !loading,
+        enabled: !loading && Boolean(users?.email),
         queryFn: async () => {
             const res = await axiosSecure(`/user?email=${users?.email}`)
             return res?.data?.user;

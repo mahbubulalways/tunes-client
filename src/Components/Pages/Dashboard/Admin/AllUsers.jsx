@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
-
+import { Fade } from "react-awesome-reveal";
 import { FaUserCheck,FaUserTie } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 const AllUsers = () => {
@@ -154,6 +154,7 @@ const handleDeleteUser =(id)=>{
     return (
         <div className='w-[90%] mx-auto p-8'>
               <h1 className='text-center text-4xl font-serif py-8'>Manage Users</h1>
+             
             <div className=" overflow-scroll w-full">
   <table className="table ">
   
@@ -173,6 +174,7 @@ const handleDeleteUser =(id)=>{
       
       {
         allUser.map((user,index)=><tr key={user._id}>
+                  
             <th>{index+1}</th>
             <td><img className='w-12 h-12 rounded-full' src={user.image} alt="" /></td>
             <td className='text-center'>{user.name}</td>
