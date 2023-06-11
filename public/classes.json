@@ -1,8 +1,9 @@
 [
     {
-        "classId": 1,
+
         "className": "Piano Beginners",
         "instructorName": "John Smith",
+        "email": "john.smith@example.com",
         "instructorImg": "https://i.ibb.co/nLkJc9x/360-F-214746128-31-Jkea-P6r-U0-Nzzzd-FC4kh-Gkmqc8noe6h.jpg",
         "availableSeats": 15,
         "image": "https://i.ibb.co/kQKv9tk/istockphoto-480652459-612x612.jpg",
@@ -13,9 +14,10 @@
          "disable":false
       },
       {
-        "classId": 2,
+    
         "className": "Guitar Intermediate",
         "instructorName": "Sarah Johnson",
+        "email": "emily.johnson@example.com",
         "instructorImg": "https://i.ibb.co/QQcJT0m/man1.webp",
         "availableSeats": 15,
         "image": "https://i.ibb.co/dJyNVGy/mWk7L3g.jpg",
@@ -26,9 +28,10 @@
         "disable":false
       },
       {
-        "classId": 3,
+      
         "className": "Drums Advanced",
         "instructorName": "Michael Davis",
+        "email": "michael.davis@example.com",
         "instructorImg": "https://i.ibb.co/zVfPnxK/instructor.jpg",
         "availableSeats": 15,
         "image": "https://i.ibb.co/sHndCYP/dram.png",
@@ -39,8 +42,9 @@
         "disable":false
       },
       {
-        "classId": 4,
+    
         "className": "Violin Beginners",
+        "email": "sarah.anderson@example.com",
         "instructorName": "Emily Thompson",
         "availableSeats": 15,
         "image": "https://i.ibb.co/0Fjts2y/violin-image-free-7.webp",
@@ -52,9 +56,10 @@
         "disable":false
       },
       {
-        "classId": 5,
+      
         "className": "Saxophone Intermediate",
         "instructorName": "David Wilson",
+        "email": "david.wilson@example.com",
         "instructorImg": "https://ibb.co/Z6YDK27",
         "availableSeats": 15,
         "image": "https://i.ibb.co/w4YfrbG/trumpet-saxophone-PNG14720.png",
@@ -65,9 +70,10 @@
         "disable":false
       },
       {
-        "classId": 7,
+     
         "className": "Bass Guitar Beginners",
         "instructorName": "Robert Martinez",
+        "email": "robert.lee@example.com",
         "availableSeats": 15,
         "instructorImg": "https://i.ibb.co/xj2c953/man4.webp",
         "image": "https://i.ibb.co/NZJD3hs/fu0mjvziselfw6fp0d5t.jpg",
@@ -78,8 +84,9 @@
         "disable":false
       },
       {
-        "classId": 8,
+      
         "className": "Trumpet Advanced",
+        "email": "daniel.lee@example.com",
         "instructorName": "Daniel Lee",
         "instructorImg": "https://i.ibb.co/5RQdfDW/gettyimages-1314489757-612x612.jpg",
         "availableSeats": 15,
@@ -91,9 +98,10 @@
         "disable":false
       },
       {
-        "classId": 9,
+       
         "className": "Flute Beginners",
         "instructorName": "Sophia Brown",
+        "email": "sophia.lee@example.com",
         "instructorImg": "https://i.ibb.co/52cCxPF/images-1.jpg",
         "availableSeats": 15,
         "image": "https://i.ibb.co/hKScfWd/WFL270copy-900x600c0pcenter.png",
@@ -104,9 +112,10 @@
         "disable":false
       },
       {
-        "classId": 10,
+      
         "className": "Cello Intermediate",
         "instructorName": "Oliver Turner",
+        "email": "oliver.lee@example.com",
         "instructorImg": "https://ibb.co/9ppbY27",
         "availableSeats": 15,
         "image": "https://i.ibb.co/PxY2TDn/cello-405758.webp",
@@ -117,9 +126,10 @@
         "disable":false
       },
       {
-        "classId": 11,
+      
         "className": "Keyboard Beginners",
         "instructorName": "Ava Walker",
+        "email": "ava.lee@example.com",
         "instructorImg": "https://i.ibb.co/SXWRTZt/images-4.jpg",
         "availableSeats": 15,
         "image": "https://i.ibb.co/ftv95CM/istockphoto-1399299335-612x612.jpg",
@@ -130,9 +140,10 @@
         "disable":false
       },
       {
-        "classId": 12,
+     
         "className": "Harmonica Intermediate",
         "instructorName": "Jackson Evans",
+        "email": "jackson.lee@example.com",
         "instructorImg": "https://i.ibb.co/C5T98Jd/images.jpg",
         "availableSeats": 15,
         "image": "https://i.ibb.co/SRVsmPT/istockphoto-1082345810-612x612.jpg",
@@ -143,9 +154,10 @@
         "disable":false
       },
       {
-        "classId": 13,
+    
         "className": "Accordion Beginners",
         "instructorName": "Mia Harris",
+        "email": "mia.lee@example.com",
         "availableSeats": 15,
         "instructorImg": "https://i.ibb.co/HC13rzP/istockphoto-522512567-612x612.jpg",
         "image": "https://i.ibb.co/BgmF2zF/istockphoto-1159006704-612x612.jpg",

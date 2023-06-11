@@ -4,7 +4,7 @@ import useAdmin from '../hooks/useAdmin';
 import useInstructor from '../hooks/useInstructor';
 import useUser from '../hooks/useUser';
 import { Fade } from "react-awesome-reveal";
-
+import {  WalletIcon,UserGroupIcon,HomeIcon ,UserIcon,DocumentIcon,CogIcon,DocumentPlusIcon,DocumentCheckIcon} from '@heroicons/react/24/solid'
 const Dashboard = () => {
   const [isAdmin] = useAdmin()
   const [isInstructor]=useInstructor()
@@ -27,11 +27,13 @@ const Dashboard = () => {
           <ul className="menu p-8 w-60  h-full   space-y-4">
           {
             isAdmin && <>
-            <NavLink to='/dashboard/allUsers' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><li className='border-b-2 text- hover:bg-white hover:text-black p-1 rounded'>All users</li></NavLink>
-            <NavLink to='/dashboard/manageClass' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><li className='border-b-2 text- hover:bg-white hover:text-black p-1 rounded'>Manage Classes</li></NavLink>
+            <NavLink to='/dashboard/allUsers' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><p className='inline-flex items-center gap-2 border-b-2 hover:text-black  hover:bg-white p-1 rounded w-full'><UserGroupIcon className="h-6 w-6 text-blue-500 " /><li className=' '>   Manage Users</li></p></NavLink>
 
-             
-              <li className='border-b-2 text-white hover:bg-white hover:text-black p-1 rounded'>Sidebar Item 2</li>
+            <NavLink to='/dashboard/manageClass' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><p className='inline-flex items-center gap-2 border-b-2 hover:text-black  hover:bg-white p-1 rounded w-full'><CogIcon className="h-6 w-6 text-blue-500 " /><li > Manage Classes</li></p></NavLink>
+           
+      
+
+         
             </>
               
           }
@@ -39,8 +41,13 @@ const Dashboard = () => {
 
           {
             isInstructor && <>
-            <NavLink to='/dashboard/addClass' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><li className='border-b-2 text- hover:bg-white hover:text-black p-1 rounded'>Add a Class</li></NavLink>
-            <NavLink to='/dashboard/instructorClass' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><li className='border-b-2 text- hover:bg-white hover:text-black p-1 rounded'>My Class</li></NavLink>
+             <NavLink  to='/dashboard/addClass' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><p className='inline-flex items-center gap-2 border-b-2 hover:text-black  hover:bg-white p-1 rounded w-full'><DocumentPlusIcon className="h-6 w-6 text-blue-500 " /><li className=' '>  Add a Class</li></p></NavLink>
+
+             <NavLink  to='/dashboard/instructorClass' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><p className='inline-flex items-center gap-2 border-b-2 hover:text-black  hover:bg-white p-1 rounded w-full'><DocumentCheckIcon className="h-6 w-6 text-blue-500 " /><li className=' '> My Class</li></p></NavLink>
+
+          
+
+
            
                 
             </>
@@ -48,13 +55,15 @@ const Dashboard = () => {
 
           {
             isUser && <>
+             <NavLink  to='/dashboard/my-classes' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><p className='inline-flex items-center gap-2 border-b-2 hover:text-black  hover:bg-white p-1 rounded w-full'><DocumentIcon className="h-6 w-6 text-blue-500 " /><li className=' '> My  Classes</li></p></NavLink>
 
-            <NavLink to='/dashboard/my-classes' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><li className='border-b-2 text- hover:bg-white hover:text-black p-1 rounded'>My  Classes</li></NavLink>
+             <NavLink  to='/dashboard/enrollClass' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><p className='inline-flex items-center gap-2 border-b-2 hover:text-black  hover:bg-white p-1 rounded w-full'><DocumentCheckIcon className="h-6 w-6 text-blue-500 " /><li className=' '>My Enrolled Classes</li></p></NavLink>
 
-            <NavLink to='/dashboard/enrollClass' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><li className='border-b-2 text- hover:bg-white hover:text-black p-1 rounded'>My Enrolled Classes</li></NavLink>
+             <NavLink to='/dashboard/paymentHistory' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><p className='inline-flex items-center gap-2 border-b-2 hover:text-black  hover:bg-white p-1 rounded w-full'><WalletIcon className="h-6 w-6 text-blue-500 " /><li className=' '>Payment History</li></p></NavLink>
+
+
 
             
-            <NavLink to='/dashboard/paymentHistory' style={({ isActive }) => { return { background: isActive ? "white" : "", color: isActive ? 'black' : 'white', borderRadius: isActive ? '4px' : '' }; }}><li className='border-b-2 text- hover:bg-white hover:text-black p-1 rounded'>Payment History</li></NavLink>
 
 
             
@@ -68,11 +77,12 @@ const Dashboard = () => {
 
 
                     <div className=" border-b-8 border-gray-600 pt-10">  </div>
-                
-                    <Link to="/"><p className=' border-b-2 mt-4 text-white hover:bg-white hover:text-black p-1 rounded'>Home</p></Link>
-                    <Link to="/instructor"><p className=' border-b-2 text-white hover:bg-white hover:text-black p-1 rounded'>Instructor</p></Link>
-                    <Link to="/classes"><p className=' border-b-2 text-white hover:bg-white hover:text-black p-1 rounded'>Classes</p></Link>
-                    
+                   
+                    <Link to="/"><p className='inline-flex items-center gap-2 border-b-2 hover:text-black  hover:bg-white p-1 rounded w-full  text-white'>  <HomeIcon className="h-6 w-6 text-blue-500 " /><li >Home</li></p></Link>
+                    <Link to="/instructor"><p className='inline-flex items-center gap-2 border-b-2 hover:text-black  hover:bg-white p-1 rounded w-full  text-white'>  <UserIcon className="h-6 w-6 text-blue-500 " /><li >Instructor</li></p></Link>
+                    <Link to="/classes"><p className='inline-flex items-center gap-2 border-b-2 hover:text-black  hover:bg-white p-1 rounded w-full  text-white'>  <DocumentIcon className="h-6 w-6 text-blue-500 " /><li >Classes</li></p></Link>
+                   
+                  
                    
                    </ul>
                     

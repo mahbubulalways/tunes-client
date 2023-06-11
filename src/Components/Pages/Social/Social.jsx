@@ -13,7 +13,7 @@ const Social = () => {
          const saveUser = { name: data?.displayName
             , email: data?.email,image:data?.photoURL,role:'user'}
             console.log(saveUser);
-                        fetch('http://localhost:6500/users', {
+                        fetch('https://assignment-12-server-mahbubulalways.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'

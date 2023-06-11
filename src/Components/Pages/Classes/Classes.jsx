@@ -14,8 +14,8 @@ console.log(approvedClasses);
 
 
     return (
-        <div className='w-[80%] mx-auto'>
-            <h1 className='text-4xl text-center font-serif py-10'>All Classes</h1>
+        <div className='w-[80%] mx-auto py-8'>
+            <h1 className='text-4xl text-center font-serif pb-8'>All Classes</h1>
            <div className='  grid grid-cols-1 md:grid-cols-3 gap-8'>
             {
                 approvedClasses.map(cls=><ShowClasses

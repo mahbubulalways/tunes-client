@@ -10,7 +10,7 @@ const usePopular = () => {
         }
 
     })
-    return [popular,refetch]
+    return [popular,loading]
 };
 
 export default usePopular;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
-import {  TrashIcon } from '@heroicons/react/24/solid'
+
 import { FaUserCheck,FaUserTie } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 const AllUsers = () => {

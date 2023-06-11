@@ -1,15 +1,19 @@
 import React from 'react';
 import { useQuery } from "@tanstack/react-query";
-import { Link } from 'react-router-dom';
+import { RotateLoader } from 'react-spinners';
 const Instructor = () => {
 
     const {data: instructors = [], isLoading: loading, refetch} = useQuery({
         queryKey: ['instructors'],
         queryFn: async() => {
-            const res = await fetch('http://localhost:6500/instructors');
+            const res = await fetch('https://assignment-12-server-mahbubulalways.vercel.app/instructors');
             return res.json();
         }
     })
+
+    if(loading){
+      return <div className='flex justify-center py-32'><RotateLoader color="#000000"  size={15}/></div>
+    }
 
     return (
        <div className='w-[80%] mx-auto py-16'>
