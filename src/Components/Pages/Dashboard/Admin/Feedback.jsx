@@ -11,7 +11,7 @@ const Feedback = () => {
         const feedback=event.target.feedback.value
         const updateData={feedback}
         setSpinner(true)
-                    fetch(`http://localhost:6500/feedback/${userId.id}`, {
+                    fetch(`https://assignment-12-server-mahbubulalways.vercel.app/feedback/${userId.id}`, {
                       method: 'PATCH',
                       headers: {
                           'content-type': 'application/json'

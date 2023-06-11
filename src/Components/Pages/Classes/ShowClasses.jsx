@@ -29,7 +29,7 @@ const ShowClasses = ({data}) => {
         if(users && users.email){
             const selected ={email:users.email,image:item.image,className:item.className,price:item.price}
               console.log(selected);
-              fetch('http://localhost:6500/userClass',{
+              fetch('https://assignment-12-server-mahbubulalways.vercel.app/userClass',{
                 method:'POST',
                 headers:{
                     'content-type':'application/json'

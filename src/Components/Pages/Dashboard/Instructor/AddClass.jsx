@@ -25,7 +25,7 @@ const AddClass = () => {
         .then(data=>{
         const img =data.data.display_url
         const newClass = { className:name,email:users?.email,image:img, instructorImg:users?.photoURL , instructorName:users?.displayName,status,price,availableSeats:seats,disable,enroll:0,feedback:'No feedback'}
-        fetch('http://localhost:6500/classes', {
+        fetch('https://assignment-12-server-mahbubulalways.vercel.app/classes', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'

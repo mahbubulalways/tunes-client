@@ -29,7 +29,7 @@ const handleApprove=(id)=>{
         confirmButtonText: 'Yes, approved it!'
       }).then((result) => {
         if (result.isConfirmed) {
-            fetch(`http://localhost:6500/approveClass/${id}`, {
+            fetch(`https://assignment-12-server-mahbubulalways.vercel.app/approveClass/${id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -67,7 +67,7 @@ const handleDeny=(id)=>{
         confirmButtonText: 'Yes, Deny!'
       }).then((result) => {
         if (result.isConfirmed) {
-            fetch(`http://localhost:6500/denyClass/${id}`, {
+            fetch(`https://assignment-12-server-mahbubulalways.vercel.app/denyClass/${id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
