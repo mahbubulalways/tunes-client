@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const axiosSecure=axios.create({
-    baseURL:`http://localhost:6500`,
+    baseURL:`https://assignment-12-server-mahbubulalways.vercel.app/`,
 })
 
 const useAxiosSecure = () => {
