@@ -20,6 +20,7 @@ import Feedback from "../Pages/Dashboard/Admin/Feedback";
 import EnrollClass from "../Pages/Dashboard/Students/EnrollClass";
 import PaymentHistory from "../Pages/Dashboard/Students/PaymentHistory";
 
+
 const router = createBrowserRouter([
     {
       path: "/",

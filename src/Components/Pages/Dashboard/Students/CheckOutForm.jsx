@@ -97,6 +97,26 @@ const CheckOutForm = ({singleClass}) => {
                
               })
              
+
+              if(findClass.availableSeats===1){
+                const btnDisable=true
+                fetch(`http://localhost:6500/setDisable/${findClass._id}`,{
+                method:'PATCH',
+                headers:{
+                  'content-type':'application/json'
+              },
+              body:JSON.stringify({btnDisable})
+            })
+            .then(res=>res.json())
+            .then(data=>{
+              
+              console.log(data);
+            })
+            
+              }
+
+
+
              
               const payment={email:users?.email,
                 transactionID:id,price,

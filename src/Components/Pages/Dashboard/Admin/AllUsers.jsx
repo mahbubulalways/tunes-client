@@ -10,13 +10,13 @@ const AllUsers = () => {
         queryKey: ['allUsers'],
         queryFn: async () => {
             const res = await axiosSecure('/allUsers')
-            console.log(res.data);
+            
             return res.data;
         },
     })
    
 
-    
+    console.log(allUser);
 
 
     const handleMakeAdmin=(id)=>{
@@ -57,7 +57,7 @@ const AllUsers = () => {
 }
 
 
-const handleMakeInstructor=(id)=>{
+const handleMakeInstructor=(user)=>{
 
   Swal.fire({
     title: 'Are you sure?',
@@ -71,7 +71,7 @@ const handleMakeInstructor=(id)=>{
     if (result.isConfirmed) {
       const role ='instructor'
       const updateData={role:role}
-      fetch(`http://localhost:6500/makeInstructor/${id}`,{
+      fetch(`http://localhost:6500/makeInstructor/${user?._id}`,{
         method:'PATCH',
         headers:{
           'content-type':'application/json'
@@ -86,9 +86,22 @@ const handleMakeInstructor=(id)=>{
                     refetch();
                     Swal.fire(
                         'Done',
-                        'Make admin successfully',
+                        'Make instructor successfully',
                         'success'
                     )
+
+                    const instructor={
+                      instructorName:user?.name,
+                      instructorImg:user?.image,
+                      email:user?.email
+                     }
+                     axiosSecure.post('/addedInstructor',instructor,
+                     )
+                     .then(res=>{
+                        console.log(res);
+                     })
+
+
                 }
                 
             })
@@ -143,7 +156,7 @@ const handleDeleteUser =(id)=>{
               <h1 className='text-center text-4xl font-serif py-8'>Manage Users</h1>
             <div className=" overflow-scroll w-full">
   <table className="table ">
-    {/* head */}
+  
     <thead>
       <tr>
         <th></th>
@@ -169,7 +182,7 @@ const handleDeleteUser =(id)=>{
             <button onClick={()=>handleMakeAdmin(user._id)} className=' bg-blue-600 p-2 text-white rounded-md disabled:bg-gray-500' disabled={user.role==='admin'}> <FaUserCheck className='w-6 h-6'/></button>
            </td>
            <td className='text-center'>
-           <button onClick={()=>handleMakeInstructor(user._id)} className=' bg-yellow-600 p-2 mt-2 text-white rounded-md disabled:bg-gray-500' disabled={user.role==='instructor'}><FaUserTie className='w-6 h-6'/></button>
+           <button onClick={()=>handleMakeInstructor(user)} className=' bg-yellow-600 p-2 mt-2 text-white rounded-md disabled:bg-gray-500' disabled={user.role==='instructor'}><FaUserTie className='w-6 h-6'/></button>
            </td>
             <td className='text-center'><button onClick={()=>handleDeleteUser(user._id)} className=' bg-red-600 p-2 text-white rounded-md'>Delete</button></td>
           </tr>)

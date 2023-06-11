@@ -9,7 +9,7 @@ import useAdmin from '../../hooks/useAdmin';
 
 const ShowClasses = ({data}) => {
  const {_id,image,className,instructorName,price,availableSeats,disable}=data
- 
+ console.log(disable);
     const {users}=useContext(AuthContext)
     const [,refetch]=useClasses()
     const navigate =useNavigate()
@@ -17,7 +17,7 @@ const ShowClasses = ({data}) => {
     const [isAdmin]=useAdmin()
     const [isInstructor]=useInstructor()
  
-    
+
     
   
    
@@ -45,27 +45,6 @@ const ShowClasses = ({data}) => {
                    
                   })
                 }
-                
-
-                
-                if(item.availableSeats===0){
-                  const btnDisable=true
-                  fetch(`http://localhost:6500/setDisable/${item._id}`,{
-                  method:'PATCH',
-                  headers:{
-                    'content-type':'application/json'
-                },
-                body:JSON.stringify({btnDisable})
-              })
-              .then(res=>res.json())
-              .then(data=>{
-                console.log(data);
-              })
-              return
-                }
-               
-             
-
               })
         }
         else{
@@ -78,6 +57,10 @@ const ShowClasses = ({data}) => {
           navigate('/login')
         }
     }
+
+   
+
+
 
 
     return (
@@ -92,7 +75,7 @@ const ShowClasses = ({data}) => {
                   <p>Price : ${price}</p>
                   <div className="card-actions justify-end">
                     <button onClick={()=>selectClass(data)} className=" bg-blue-700 text-gray-100 w-full py-3 rounded-lg hover:bg-[#000000] transition-all duration-300 disabled:bg-gray-500" disabled={ isAdmin 
-                    || isInstructor }>Select</button>
+                    || isInstructor || disable }>Select</button>
                   </div>
                 </div>
               </div>

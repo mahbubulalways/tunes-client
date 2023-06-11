@@ -1,62 +1,72 @@
 [
     {
-      "name": "John Smith",
-      "image": "https://i.ibb.co/zVfPnxK/instructor.jpg",
+      "instructorName": "John Smith",
+        "instructorImg": "https://i.ibb.co/nLkJc9x/360-F-214746128-31-Jkea-P6r-U0-Nzzzd-FC4kh-Gkmqc8noe6h.jpg",
       "email": "john.smith@example.com"
+  
     },
     {
-      "name": "Emily Johnson",
-      "image": "https://i.ibb.co/XXj8jnG/man5.jpg",
+      "instructorName": "Sarah Johnson",
+        "instructorImg": "https://i.ibb.co/QQcJT0m/man1.webp",
       "email": "emily.johnson@example.com"
+    
+
     },
     {
-      "name": "Michael Davis",
-      "image": "https://i.ibb.co/XXj8jnG/man5.jpg",
+      "instructorName": "Michael Davis",
+      "instructorImg": "https://i.ibb.co/zVfPnxK/instructor.jpg",
       "email": "michael.davis@example.com"
+   
     },
     {
-      "name": "Sarah Anderson",
-      "image": "https://i.ibb.co/XXj8jnG/man5.jpg",
+      "instructorName": "Emily Thompson",
+      "instructorImg": "https://i.ibb.co/8g1pgc5/istockphoto-1319763895-612x612.jpg",
       "email": "sarah.anderson@example.com"
+
+
     },
     {
-      "name": "David Wilson",
-      "image": "https://i.ibb.co/XXj8jnG/man5.jpg",
+      "instructorName": "David Wilson",
+      "instructorImg": "https://i.ibb.co/SXWRTZt/images-4.jpg",
       "email": "david.wilson@example.com"
     },
     {
-      "name": "Jennifer Lee",
-      "image": "https://i.ibb.co/XXj8jnG/man5.jpg",
+      "instructorName": "Robert Martinez",
+      "instructorImg": "https://i.ibb.co/xj2c953/man4.webp",
       "email": "jennifer.lee@example.com"
+    
     },
     {
-      "name": "Mark Thompson",
-      "image": "https://i.ibb.co/XXj8jnG/man5.jpg",
+      "instructorName": "Daniel Lee",
+      "instructorImg": "https://i.ibb.co/5RQdfDW/gettyimages-1314489757-612x612.jpg",
       "email": "mark.thompson@example.com"
+   
     },
     {
-      "name": "Laura Martinez",
-      "image": "https://i.ibb.co/XXj8jnG/man5.jpg",
+      "instructorName": "Sophia Brown",
+        "instructorImg": "https://i.ibb.co/52cCxPF/images-1.jpg",
       "email": "laura.martinez@example.com"
+   
     },
     {
-      "name": "Christopher Harris",
-      "image": "https://i.ibb.co/XXj8jnG/man5.jpg",
+      "instructorName": "Oliver Turner",
+        "instructorImg": "https://i.ibb.co/HC13rzP/istockphoto-522512567-612x612.jpg",
       "email": "christopher.harris@example.com"
+      
     },
     {
-      "name": "Jessica Robinson",
-      "image": "https://i.ibb.co/XXj8jnG/man5.jpg",
+      "instructorName": "Ava Walker",
+      "instructorImg": "https://i.ibb.co/SXWRTZt/images-4.jpg",
       "email": "jessica.robinson@example.com"
     },
     {
-      "name": "Ryan Carter",
-      "image": "https://i.ibb.co/XXj8jnG/man5.jpg",
+      "instructorName": "Jackson Evans",
+      "instructorImg": "https://i.ibb.co/C5T98Jd/images.jpg",
       "email": "ryan.carter@example.com"
     },
     {
-      "name": "Amanda Green",
-      "image": "https://i.ibb.co/XXj8jnG/man5.jpg",
+      "instructorName": "Mia Harris",
+      "instructorImg": "https://i.ibb.co/HC13rzP/istockphoto-522512567-612x612.jpg",
       "email": "amanda.green@example.com"
     }
   ]
