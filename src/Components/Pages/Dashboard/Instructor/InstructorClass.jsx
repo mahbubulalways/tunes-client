@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import { AuthContext } from '../../../Provider/AuthProvider';
+import { Fade } from 'react-awesome-reveal';
 const InstructorClass = () => {
    const {users}=useContext(AuthContext)
     const [axiosSecure]=useAxiosSecure()
@@ -14,10 +15,10 @@ const InstructorClass = () => {
         },
     })
 
-console.log(instructorClass);
 
     return (
-        <div className='w-[90%] mx-auto p-8'>
+      <Fade cascade duration={3000}>
+<div className='w-[90%] mx-auto p-8'>
             <h1 className='text-center py-8 text-2xl font-serif'>My  Classes</h1>
                  {
                    instructorClass.length > 0  ?  <div className='w-[90%] mx-auto p-8'>
@@ -58,6 +59,9 @@ console.log(instructorClass);
                </div> :  <h1 className='text-center py-20  text-red-600'> No Class Available</h1> 
                  }
         </div>
+
+      </Fade>
+        
     );
 };
 

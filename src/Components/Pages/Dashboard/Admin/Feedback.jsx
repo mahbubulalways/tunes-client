@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 const Feedback = () => {
     const [spinner,setSpinner]=useState(false)
     const  userId  = useParams();
-    console.log(userId);
+   
     const handleFeedback=(event)=>{
         event.preventDefault()
         const feedback=event.target.feedback.value
@@ -20,7 +20,7 @@ const Feedback = () => {
                   })
                   .then(res=>res.json())
                   .then(data=>{
-                    console.log(data);
+                   
                     if (data.modifiedCount>0) {
                         setSpinner(false)
                       

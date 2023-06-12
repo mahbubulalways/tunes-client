@@ -87,7 +87,7 @@ const Register = () => {
     return (
         
             <div className="w-96 mx-auto py-5">
-            {/* <img className="w-1/2 mx-auto" src={registerImg} alt="" /> */}
+           
       <form onSubmit={handleSubmit(onSubmit)}>
       <input
           className="w-full px-8 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-600 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"

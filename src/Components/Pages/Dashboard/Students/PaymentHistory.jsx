@@ -3,6 +3,7 @@ import moment from 'moment';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import { AuthContext } from '../../../Provider/AuthProvider';
+import { Fade } from 'react-awesome-reveal';
 const PaymentHistory = () => {
     const {users,loading}=useContext(AuthContext)
     const [axiosSecure]=useAxiosSecure()
@@ -16,7 +17,9 @@ const PaymentHistory = () => {
     })
 
     return (
-        <div className='w-[90%] mx-auto p-8'>
+      <Fade>
+           <div className='w-[90%] mx-auto p-8'>
+        
         <h1 className='text-center py-8 text-2xl font-serif'>Payment History</h1>
          {
             enrollClass.length > 0 ?
@@ -58,7 +61,9 @@ const PaymentHistory = () => {
             </div> :
              <h1 className='text-center py-20  text-red-600'> No Payment History</h1>
          }
-    </div>
+    </div> 
+      </Fade>
+        
     );
 };
 

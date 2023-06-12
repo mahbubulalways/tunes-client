@@ -80,7 +80,7 @@ const handleMakeInstructor=(user)=>{
       })
       .then(res => res.json())
             .then(data => {
-              console.log(data);
+              
                 if (data.modifiedCount > 0) {
                  
                     refetch();
@@ -98,7 +98,7 @@ const handleMakeInstructor=(user)=>{
                      axiosSecure.post('/addedInstructor',instructor,
                      )
                      .then(res=>{
-                        console.log(res);
+                        
                      })
 
 
@@ -152,10 +152,11 @@ const handleDeleteUser =(id)=>{
 }
 
     return (
+      <Fade cascade duration={3000}>
         <div className='w-[90%] mx-auto p-8'>
               <h1 className='text-center text-4xl font-serif py-8'>Manage Users</h1>
              
-            <div className=" overflow-scroll w-full">
+              <div className=" overflow-scroll w-full">
   <table className="table ">
   
     <thead>
@@ -171,12 +172,13 @@ const handleDeleteUser =(id)=>{
       </tr>
     </thead>
     <tbody>
-      
+
       {
-        allUser.map((user,index)=><tr key={user._id}>
+        allUser.map((user,index)=> <tr key={user._id}>
                   
             <th>{index+1}</th>
             <td><img className='w-12 h-12 rounded-full' src={user.image} alt="" /></td>
+          
             <td className='text-center'>{user.name}</td>
             <td className='text-center'>{user.email}</td>
             <td className='text-center'>{user.role}</td>
@@ -193,7 +195,10 @@ const handleDeleteUser =(id)=>{
     </tbody>
   </table>
 </div>
+  
+           
         </div>
+        </Fade>
     );
 };
 

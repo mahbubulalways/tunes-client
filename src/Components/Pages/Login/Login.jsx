@@ -21,7 +21,7 @@ const Login = () => {
         const password=data.password
         handleLogin(email,password)
         .then(result=>{
-         console.log(result.user);
+    
          Swal.fire({
             icon: 'success',
             title: 'Log in successfully',

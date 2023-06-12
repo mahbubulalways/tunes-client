@@ -17,13 +17,13 @@ const CheckOutForm = ({singleClass}) => {
   
 
     const findClass=classes?.find(oneClass=>oneClass.className===singleClass?.className)
-    console.log(findClass);
+  
 
     useEffect(()=>{
         axiosSecure.post('/create-payment-intent',{price},
         )
         .then(res=>{
-            console.log(res.data.clientSecret);
+            
             setClientSecret(res.data.clientSecret);
         })
     },[price])
@@ -36,7 +36,7 @@ const CheckOutForm = ({singleClass}) => {
           return
         }
         const card=elements.getElement(CardElement)
-        console.log(card);
+        
         if(card===null){
             return
         }
@@ -46,7 +46,7 @@ const CheckOutForm = ({singleClass}) => {
             card
         })
         if(error){
-            console.log('error',error);
+          
            const cardError=error.message
             Swal.fire({
                 icon: 'warning',
@@ -56,7 +56,7 @@ const CheckOutForm = ({singleClass}) => {
               })
         }
         else{
-            // console.log('payment',paymentMethod);
+            
         }
         setProcessing(true)
         const {paymentIntent, error:confirmError} = await stripe.confirmCardPayment(
@@ -73,7 +73,7 @@ const CheckOutForm = ({singleClass}) => {
           );
      
           if(confirmError){
-            console.log(confirmError);
+            
             const cardError=confirmError.message
             Swal.fire({
                 icon: 'warning',
@@ -110,7 +110,7 @@ const CheckOutForm = ({singleClass}) => {
             .then(res=>res.json())
             .then(data=>{
               
-              console.log(data);
+              
             })
             
               }
@@ -127,7 +127,7 @@ const CheckOutForm = ({singleClass}) => {
                 axiosSecure.post('/payment',payment,
                 )
                 .then(res=>{
-                    console.log(res.data);
+                    
                     
                 })
 
@@ -136,7 +136,7 @@ const CheckOutForm = ({singleClass}) => {
                 })
                 .then(res => res.json())
                       .then(data => {
-                         console.log(data);
+                      
                       })
                     
                    
@@ -154,7 +154,7 @@ const CheckOutForm = ({singleClass}) => {
                       .then(res=>res.json())
                       .then(data=>{
                      
-                        console.log(data)
+                       
                       })
 
 

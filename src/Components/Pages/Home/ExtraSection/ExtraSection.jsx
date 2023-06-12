@@ -8,7 +8,7 @@ import img6 from '../../../../assets/success/violin.webp'
 const ExtraSection = () => {
 
     const images =[img1,img2,img3,img4,img5,img6]
-    console.log(images);
+   
 
     return (
         <div className='w-[80%] mx-auto pb-16'>

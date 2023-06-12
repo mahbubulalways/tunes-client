@@ -6,8 +6,6 @@ import useClasses from '../../hooks/useClasses';
 const Classes = () => {
 const [classes]=useClasses()
 const approvedClasses=classes.filter(eachClass=>eachClass.status==='approve')
-console.log(approvedClasses);
-
     if(classes.length===0){
         return <div className='flex justify-center py-32'><RotateLoader color="#000000"  size={15}/></div>
       }

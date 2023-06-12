@@ -4,19 +4,13 @@ import { useQuery } from '@tanstack/react-query';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { Fade } from 'react-awesome-reveal';
+import useCart from '../../../hooks/useCart';
 const MyClasses = () => {
     const {users,loading}=useContext(AuthContext)
-    const [axiosSecure]=useAxiosSecure()
-    const { refetch, data: selectedClass = [] } = useQuery({
-        queryKey: ['myClass', users?.email],
-        enabled: !loading,
-        queryFn: async () => {
-            const res = await axiosSecure(`/myClass?email=${users?.email}`)
-            return res.data;
-        },
-    })
+    const [cart,refetch]=useCart()
 
-const total = selectedClass.reduce((sum, selectedClass) => selectedClass.price + sum, 0);
+const total = cart.reduce((sum, cart) => cart.price + sum, 0);
 
 
 
@@ -57,11 +51,12 @@ const total = selectedClass.reduce((sum, selectedClass) => selectedClass.price +
 
 
     return (
-        <div className='w-[90%] mx-auto p-8'>
-            <h1 className='text-center py-8 text-2xl font-serif'>My Selected Classes</h1>
+      <Fade cascade duration={3000}>
+<div className='w-[90%] mx-auto p-8'>
+            <h1 className='text-center  text-2xl font-serif'>My Selected Classes</h1>
          
           {
-            selectedClass.length > 0   ? <> <div className='border-2 w-max px-5 py-2 my-5'>
+            cart.length > 0   ? <> <div className='border-2 w-max px-5 py-2 my-5'>
             <h1>Total Price : ${total}</h1>
            </div>
            
@@ -81,7 +76,7 @@ const total = selectedClass.reduce((sum, selectedClass) => selectedClass.price +
      <tbody>
        
        {
-         selectedClass.map((myClass,index)=><tr key={myClass._id}>
+         cart.map((myClass,index)=><tr key={myClass._id}>
              <th>{index+1}</th>
              <td><img className='w-12' src={myClass.image} alt="" /></td>
              <td>{myClass.className}</td>
@@ -97,6 +92,8 @@ const total = selectedClass.reduce((sum, selectedClass) => selectedClass.price +
  </div> </>: <h1 className='text-center py-20  text-red-600'> No Class Selected</h1>
           }
         </div>
+      </Fade>
+        
     );
 };
 

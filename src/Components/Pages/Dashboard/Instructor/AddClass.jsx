@@ -54,7 +54,7 @@ const AddClass = () => {
     return (
         <div className=' w-[80%] mx-auto py-8'>
             <div className="w- mx-auto py-5">
-            {/* <img className="w-1/2 mx-auto" src={registerImg} alt="" /> */}
+            
       <form onSubmit={handleSubmit(onSubmit)}>
       <div className='grid grid-cols-1 md:grid-cols-2 items-center gap-2'>
       <input

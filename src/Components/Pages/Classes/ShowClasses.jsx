@@ -2,21 +2,20 @@ import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
-import useClasses from '../../hooks/useClasses';
 import useInstructor from '../../hooks/useInstructor';
 import useAdmin from '../../hooks/useAdmin';
+import useCart from '../../hooks/useCart';
 
 
 const ShowClasses = ({data}) => {
  const {_id,image,className,instructorName,price,availableSeats,disable}=data
- console.log(disable);
+
     const {users}=useContext(AuthContext)
-    const [,refetch]=useClasses()
     const navigate =useNavigate()
    
     const [isAdmin]=useAdmin()
     const [isInstructor]=useInstructor()
- 
+   const [,refetch]=useCart()
 
     
   
@@ -28,7 +27,7 @@ const ShowClasses = ({data}) => {
        
         if(users && users.email){
             const selected ={email:users.email,image:item.image,className:item.className,price:item.price}
-              console.log(selected);
+             
               fetch('https://assignment-12-server-mahbubulalways.vercel.app/userClass',{
                 method:'POST',
                 headers:{
@@ -39,6 +38,7 @@ const ShowClasses = ({data}) => {
               .then(res=>res.json())
               .then(data=>{
                 if(data.insertedId){
+                  refetch()
                   Swal.fire({
                     icon: 'success',
                     title: 'Selected successfully',

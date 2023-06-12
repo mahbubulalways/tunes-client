@@ -4,13 +4,13 @@ import { useQuery } from '@tanstack/react-query';
 import { XMarkIcon, CheckIcon } from '@heroicons/react/24/solid'
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import { Fade } from 'react-awesome-reveal';
 const ManageClass = () => {
     const [axiosSecure]=useAxiosSecure()
     const { refetch, data: allClasses = [] } = useQuery({
         queryKey: ['classes'],
         queryFn: async () => {
             const res = await axiosSecure('/classes')
-            console.log(res.data);
             return res.data;
         },
     })
@@ -101,11 +101,11 @@ const handleDeny=(id)=>{
 
     return (
         <div>
-             <div className='w-[90%] mx-auto p-8'>
+          <Fade cascade duration={3000}>
+          <div className='w-[90%] mx-auto p-8'>
              <h1 className='text-center text-4xl font-serif py-8'>Manage Classes</h1>
             <div className="overflow-x-auto overflow-scroll">
   <table className="table">
-    {/* head */}
     <thead>
       <tr>
         <th></th>
@@ -151,6 +151,8 @@ const handleDeny=(id)=>{
   </table>
 </div>
         </div>
+    </Fade>
+            
 
         </div>
     );

@@ -24,7 +24,7 @@ const navigate=useNavigate()
                 if(error.response && (error?.response.status === 403 || error?.response.status === 401)){
                 navigate('/')
                 const errMessage=error.message
-                console.log(errMessage);
+                
                 
                 }
                 

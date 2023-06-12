@@ -16,10 +16,10 @@ const Dashboard = () => {
       <div className="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content ">
-
+        <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button  mt-10 ml-10 lg:hidden">Open drawer</label>
           <Outlet></Outlet>
 
-          <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button px-10 py-8 mx-20   lg:hidden">Open drawer</label>
+  
 
         </div>
         <div className="drawer-side  bg-[#3e3434]">
