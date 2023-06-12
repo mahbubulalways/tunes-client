@@ -52,7 +52,7 @@ const total = cart.reduce((sum, cart) => cart.price + sum, 0);
 
 
     return (
-      <Fade cascade duration={3000}>
+      <Fade cascade duration={2000}>
          <Helmet>
         <title>tunes | my class</title>
       </Helmet>
