@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery } from "@tanstack/react-query";
 import { RotateLoader } from 'react-spinners';
+import { Helmet } from 'react-helmet-async';
 const Instructor = () => {
 
     const {data: instructors = [], isLoading: loading, refetch} = useQuery({
@@ -17,6 +18,9 @@ const Instructor = () => {
 
     return (
        <div className='w-[80%] mx-auto py-16'>
+                  <Helmet>
+        <title>tunes | instructors</title>
+      </Helmet>
         <h1 className='text-center text-4xl font-serif'>All Instructors</h1>
          <div className=' mt-10  grid grid-cols-1 md:grid-cols-3 gap-8'>
             {

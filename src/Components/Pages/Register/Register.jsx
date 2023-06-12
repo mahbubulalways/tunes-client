@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import Social from "../Social/Social";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
     const [password,showPassword]=useState(false)
@@ -87,7 +88,9 @@ const Register = () => {
     return (
         
             <div className="w-96 mx-auto py-5">
-           
+                <Helmet>
+        <title>tunes | register</title>
+      </Helmet>
       <form onSubmit={handleSubmit(onSubmit)}>
       <input
           className="w-full px-8 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-600 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"

@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import Social from '../Social/Social';
+import { Helmet } from 'react-helmet-async';
 
 
 const Login = () => {
@@ -45,6 +46,9 @@ const Login = () => {
         
             
             <div className="w-96 mx-auto py-10">
+                        <Helmet>
+        <title>tunes | login</title>
+      </Helmet>
             <img className='w-1/2 mx-auto' src={login} alt="" />
             <form onSubmit={handleSubmit(onSubmit)}>
             <input

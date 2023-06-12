@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { Fade } from 'react-awesome-reveal';
 import useCart from '../../../hooks/useCart';
+import { Helmet } from 'react-helmet-async';
 const MyClasses = () => {
     const {users,loading}=useContext(AuthContext)
     const [cart,refetch]=useCart()
@@ -52,6 +53,9 @@ const total = cart.reduce((sum, cart) => cart.price + sum, 0);
 
     return (
       <Fade cascade duration={3000}>
+         <Helmet>
+        <title>tunes | my class</title>
+      </Helmet>
 <div className='w-[90%] mx-auto p-8'>
             <h1 className='text-center  text-2xl font-serif'>My Selected Classes</h1>
          

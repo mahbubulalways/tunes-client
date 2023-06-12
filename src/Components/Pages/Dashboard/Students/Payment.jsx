@@ -6,6 +6,7 @@ import { AuthContext } from '../../../Provider/AuthProvider';
 import CheckOutForm from './CheckOutForm';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
+import { Helmet } from 'react-helmet-async';
 
 
 const Payment = () => {
@@ -24,6 +25,9 @@ const Payment = () => {
 
     return (
         <div className='w-[80%] mx-auto py-20'>
+                      <Helmet>
+        <title>tunes | payment</title>
+      </Helmet>
                <h1>Payment</h1>
                <Elements stripe={stripePromise}>
 

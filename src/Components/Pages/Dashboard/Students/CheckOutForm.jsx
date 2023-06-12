@@ -5,6 +5,7 @@ import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import './CheckOutForm.css'
 import useClasses from '../../../hooks/useClasses';
+
 const CheckOutForm = ({singleClass}) => {
     const stripe=useStripe()
     const elements=useElements()
@@ -170,6 +171,7 @@ const CheckOutForm = ({singleClass}) => {
 
     return (
         <div>
+
             <form onSubmit={handleSubmit}>
       <CardElement
         options={{

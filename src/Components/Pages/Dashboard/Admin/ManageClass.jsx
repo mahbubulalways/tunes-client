@@ -5,6 +5,7 @@ import { XMarkIcon, CheckIcon } from '@heroicons/react/24/solid'
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 import { Fade } from 'react-awesome-reveal';
+import { Helmet } from 'react-helmet-async';
 const ManageClass = () => {
     const [axiosSecure]=useAxiosSecure()
     const { refetch, data: allClasses = [] } = useQuery({
@@ -101,6 +102,9 @@ const handleDeny=(id)=>{
 
     return (
         <div>
+          <Helmet>
+        <title>tunes | manage users</title>
+      </Helmet>
           <Fade cascade duration={3000}>
           <div className='w-[90%] mx-auto p-8'>
              <h1 className='text-center text-4xl font-serif py-8'>Manage Classes</h1>

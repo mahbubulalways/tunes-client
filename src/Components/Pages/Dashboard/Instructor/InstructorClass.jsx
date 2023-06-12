@@ -3,6 +3,7 @@ import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import { Fade } from 'react-awesome-reveal';
+import { Helmet } from 'react-helmet-async';
 const InstructorClass = () => {
    const {users}=useContext(AuthContext)
     const [axiosSecure]=useAxiosSecure()
@@ -18,6 +19,9 @@ const InstructorClass = () => {
 
     return (
       <Fade cascade duration={3000}>
+        <Helmet>
+        <title>tunes | instructor class</title>
+      </Helmet>
 <div className='w-[90%] mx-auto p-8'>
             <h1 className='text-center py-8 text-2xl font-serif'>My  Classes</h1>
                  {

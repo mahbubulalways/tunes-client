@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { AuthContext } from '../../../Provider/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 const AddClass = () => {
     const {users}=useContext(AuthContext)
     const [spinner,setSpinner]=useState(false)
@@ -53,6 +54,9 @@ const AddClass = () => {
     }
     return (
         <div className=' w-[80%] mx-auto py-8'>
+          <Helmet>
+        <title>tunes | add class</title>
+      </Helmet>
             <div className="w- mx-auto py-5">
             
       <form onSubmit={handleSubmit(onSubmit)}>
