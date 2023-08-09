@@ -9,7 +9,7 @@ const Footer = () => {
         <div>
             <div className='bg-gray-700'>
             <div className=' w-[90%] mx-auto'>
-            <div className='text-gray-300  py-12'>
+            <div className='text-gray-300  pt-12 pb-8'>
            <div className=' grid grid-cols-2 md:grid-cols-3 gap-8 '>
            <div className=' '>
                <img className='w-16 ' src={logo} alt="" />
@@ -21,7 +21,7 @@ const Footer = () => {
                 </div>
              </div>
              
-            <div className='flex flex-col space-y-1 mx-auto'>
+            <div className='flex flex-col space-y-1  '>
                 <h1 className='text-xl font-semibold'>About Us</h1>
              
                 <Link>Learning</Link>
@@ -37,7 +37,7 @@ const Footer = () => {
                 
             </div>
            </div>
-           <p className='text-center py-8 text-gray-200'>Copyright © 2023 - All right reserved</p>
+           <p className='text-center pt-8  text-gray-200'>Copyright © 2023 - All right reserved</p>
         </div>
      
         </div>

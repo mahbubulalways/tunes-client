@@ -17,7 +17,9 @@ const approvedClasses=classes.filter(eachClass=>eachClass.status==='approve')
                  <Helmet>
         <title>tunes | classes</title>
       </Helmet>
-            <h1 className='text-4xl text-center font-serif pb-8'>All Classes</h1>
+      <h1 className='text-5xl text-center font-serif  font-extrabold  pb-8'>All <span className='text-red-700'> Classes</span></h1>
+      
+       
            <div className='  grid grid-cols-1 md:grid-cols-3 gap-8'>
             {
                 approvedClasses.map(cls=><ShowClasses

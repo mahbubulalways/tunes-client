@@ -29,11 +29,11 @@ const AuthProvider = ({children}) => {
         return signOut(auth)
     }
 
-    const updateUserProfile=(users,name,imgUrl)=>{
-        updateProfile(users, {
-            displayName: name, photoURL: imgUrl
-          })
-    }
+    const profileUpdate = async (updateUser = {}) => {
+        setLoading(true);
+        await updateProfile(auth.currentUser, updateUser);
+        setUser((preUser) => ({ ...preUser, ...updateUser }));
+      };
 
     useEffect(()=>{
         const unsubscribe=onAuthStateChanged(auth,currentUser=>{
@@ -62,7 +62,7 @@ const AuthProvider = ({children}) => {
         handleLogin,
         handleGoogle,
         handleLogOut,
-        updateUserProfile,
+        profileUpdate,
         users,
         loading
     }

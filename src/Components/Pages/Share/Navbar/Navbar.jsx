@@ -53,6 +53,7 @@ const Navbar = () => {
                 <div className='hidden lg:block'>
                     <div className='flex  gap-5 text-lg'>
                         <NavLink
+                        className={'text-xl '}
                             to="/"
                             style={({ isActive }) => {
                                 return {
@@ -63,6 +64,7 @@ const Navbar = () => {
                             Home
                         </NavLink>
                         <NavLink
+                          className={'text-xl '}
                             to="/instructor"
                             style={({ isActive }) => {
                                 return {
@@ -73,6 +75,7 @@ const Navbar = () => {
                             Instructor
                         </NavLink>
                         <NavLink
+                          className={'text-xl '}
 
                             to="/classes"
                             style={({ isActive }) => {
@@ -130,7 +133,7 @@ const Navbar = () => {
                 </div>
             </div>
             <span onClick={() => setToggle(!toggle)}>
-                {<div className={`grid grid-cols-1 w-2/3 text-lg pl-10 absolute    duration-500 py-10 space-y-5 pr-4  bg-[#1c6273] lg:hidden sm:block rounded-br-md ${toggle ? 'left-0' : '-left-full'}`} >
+                {<div className={`grid grid-cols-1 w-2/3 text-lg pl-10 absolute    duration-500 py-10 space-y-5 pr-4  bg-[#1c6273] h-screen lg:hidden sm:block rounded-br-md ${toggle ? 'left-0' : '-left-full'}`} >
                     <div className='flex flex-col gap-3'>
                         <Link className='text-white hover:text-black hover:bg-white px-3 py-1 rounded-md' to='/'>Home</Link>
                         <Link className='text-white hover:text-black  hover:bg-white px-3 py-1 rounded-md' to="/instructor"> Instructor</Link>

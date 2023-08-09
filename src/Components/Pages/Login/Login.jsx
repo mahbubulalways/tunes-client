@@ -12,7 +12,7 @@ const Login = () => {
     const [password,showPassword]=useState(false)
     const [spinner,setSpinner]=useState(false)
     const [err,setErr]=useState('')
-    const {handleLogin}=useContext(AuthContext)
+    const {signInUser}=useContext(AuthContext)
     const navigate =useNavigate()
     const { register, handleSubmit,formState: { errors } } = useForm();
     const onSubmit = data => {
@@ -20,7 +20,7 @@ const Login = () => {
         console.log(data.email);
         const email =data.email
         const password=data.password
-        handleLogin(email,password)
+        signInUser(email,password)
         .then(result=>{
     
          Swal.fire({
@@ -46,9 +46,9 @@ const Login = () => {
         
             
             <div className="w-96 mx-auto py-10">
-                        <Helmet>
+                        {/* <Helmet>
         <title>tunes | login</title>
-      </Helmet>
+      </Helmet> */}
             <img className='w-1/2 mx-auto' src={login} alt="" />
             <form onSubmit={handleSubmit(onSubmit)}>
             <input

@@ -17,11 +17,12 @@ const Instructor = () => {
     }
 
     return (
-       <div className='w-[80%] mx-auto py-16'>
+       <div className='w-[80%] mx-auto py-8'>
                   <Helmet>
         <title>tunes | instructors</title>
       </Helmet>
-        <h1 className='text-center text-4xl font-serif'>All Instructors</h1>
+      <h1 className='text-5xl text-center font-serif  font-extrabold pb-8 '>All <span className='text-red-700'> Instructors</span></h1>
+      
          <div className=' mt-10  grid grid-cols-1 md:grid-cols-3 gap-8'>
             {
                 instructors.map((instructor)=><div key={instructor._id} className="card w-full bg-base-100 shadow-xl">
